@@ -17,14 +17,14 @@ namespace EladGroup.Misc
     /// </summary>
     internal sealed class ConnectionInitiator
     {
-        private ConnectionInitiator()
-        {
-        }
-
         private static readonly Lazy<ConnectionInitiator> Lazy =
             new Lazy<ConnectionInitiator>(() => new ConnectionInitiator());
 
         public static ConnectionInitiator Instance => Lazy.Value;
+
+        private ConnectionInitiator()
+        {
+        }
 
         public void GetConnectionStrings()
         {
