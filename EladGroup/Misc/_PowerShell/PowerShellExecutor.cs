@@ -1,13 +1,15 @@
-﻿using System;
+﻿using System.Management.Automation;
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace EladGroup.Misc.PowerShell
+namespace EladGroup.Misc._PowerShell
 {
-    
+
     /// <summary>
     /// Prerequisite:
-    /// Add the package: `Microsoft.PowerShell.SDK`
+    /// Add the package: `Microsoft.PowerShell.5.1.ReferenceAssemblies`
     /// </summary>
     public class PowerShellExecutor
     {
