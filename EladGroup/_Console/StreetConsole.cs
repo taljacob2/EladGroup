@@ -10,8 +10,8 @@ namespace EladGroup._Console
 
         public void Get()
         {
-            StreetLogic.Get()
-                .ForEach(street => Console.WriteLine(street.ToStringExtension()));
+            StreetLogic.Get().ForEach(street =>
+                Console.WriteLine(street.ToStringExtension()));
         }
     }
 }

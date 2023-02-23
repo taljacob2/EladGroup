@@ -10,7 +10,8 @@ namespace EladGroup._Console
 
         public void Get()
         {
-            CityLogic.Get().ForEach(city => Console.WriteLine(city.ToStringExtension()));
+            CityLogic.Get().ForEach(city =>
+                Console.WriteLine(city.ToStringExtension()));
         }
     }
 }
