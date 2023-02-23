@@ -12,7 +12,6 @@ namespace EladGroup.Logics
     {
         public void Insert(string name, int priority, int cityId)
         {
-            // Create a new SQL query using StringBuilder
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append(
                 "INSERT INTO Street (Name, Priority, CityId) VALUES ");

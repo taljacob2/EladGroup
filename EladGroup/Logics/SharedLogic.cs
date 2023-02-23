@@ -20,8 +20,7 @@ namespace EladGroup.Logics
                     )
                     {
                         sqlConnection.Open();
-                        cmd.ExecuteNonQuery(); // Execute the query.
-                        // Console.WriteLine("Query Executed.");
+                        cmd.ExecuteNonQuery();
                     }
                 }
             }
