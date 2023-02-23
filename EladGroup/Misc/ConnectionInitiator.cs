@@ -15,7 +15,7 @@ namespace EladGroup.Misc
     /// https://www.c-sharpcorner.com/UploadFile/8911c4/singleton-design-pattern-in-C-Sharp/
     /// https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/connection-strings-and-configuration-files
     /// </summary>
-    public sealed class ConnectionInitiator
+    internal sealed class ConnectionInitiator
     {
         private ConnectionInitiator()
         {
