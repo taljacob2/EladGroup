@@ -1,5 +1,6 @@
 ﻿using EladGroup.Misc;
 using System;
+using EladGroup.Logics;
 
 namespace EladGroup
 {
@@ -11,7 +12,10 @@ namespace EladGroup
 
             // Startup startup = Startup.Instance;
             // startup.InitDatabase();
-
+            
+            CityLogic cityLogic = new CityLogic();
+            
+            cityLogic.Insert("Ramat Gan", 5);
         }
     }
 }

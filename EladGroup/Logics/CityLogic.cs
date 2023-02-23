@@ -22,8 +22,8 @@ namespace EladGroup.Logics
             using (SqlCommand sqlCommand =
                 new SqlCommand(query, Startup.SqlConnection))
             {
-                sqlCommand.ExecuteNonQuery(); //execute the Query
-                Console.WriteLine("Query Executed.");
+                sqlCommand.ExecuteNonQuery(); // Execute the query.
+                // Console.WriteLine("Query Executed.");
             }
         }
     }
