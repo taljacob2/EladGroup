@@ -10,7 +10,10 @@ namespace EladGroup.Misc
     /// <summary>
     /// Prerequisite: Add `System.Configuration` as Reference.
     /// Singleton implementation.
-    /// Reference: https://www.c-sharpcorner.com/UploadFile/8911c4/singleton-design-pattern-in-C-Sharp/
+    /// 
+    /// References:
+    /// https://www.c-sharpcorner.com/UploadFile/8911c4/singleton-design-pattern-in-C-Sharp/
+    /// https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/connection-strings-and-configuration-files
     /// </summary>
     public sealed class ConnectionInitiator
     {
