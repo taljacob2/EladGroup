@@ -9,7 +9,10 @@ namespace EladGroup
         {
             Console.WriteLine("Hello World");
 
-            new Startup().ConnectionInitiator.GetConnectionStrings();
+            Startup startup = new Startup();
+            Console.WriteLine(
+                startup.ConnectionInitiator.GetConnectionStringByName(
+                    "EladGroupEntities"));
         }
     }
 }

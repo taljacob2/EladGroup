@@ -10,6 +10,7 @@ namespace EladGroup.Misc
     /// <summary>
     /// Prerequisite: Add `System.Configuration` as Reference.
     /// Singleton implementation.
+    /// Reference: https://www.c-sharpcorner.com/UploadFile/8911c4/singleton-design-pattern-in-C-Sharp/
     /// </summary>
     public sealed class ConnectionInitiator
     {
@@ -34,10 +35,43 @@ namespace EladGroup.Misc
 
             foreach (ConnectionStringSettings cs in settings)
             {
+                Console.WriteLine("Name");
                 Console.WriteLine(cs.Name);
+                Console.WriteLine("ProviderName");
                 Console.WriteLine(cs.ProviderName);
+                Console.WriteLine("ConnectionString");
                 Console.WriteLine(cs.ConnectionString);
             }
+        }
+
+        /// <summary>
+        /// Retrieve a connection string by specifying the name.
+        /// Assumes one connection string per name in the config file.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public string GetConnectionStringByName(string name)
+        {
+            string returnValue = null;
+
+            ConnectionStringSettingsCollection settings =
+                ConfigurationManager.ConnectionStrings;
+
+            if (settings == null)
+            {
+                return returnValue;
+            }
+
+            foreach (ConnectionStringSettings cs in settings)
+            {
+                if (cs.Name == name)
+                {
+                    returnValue = cs.ConnectionString;
+                    break;
+                }
+            }
+
+            return returnValue;
         }
     }
 }
