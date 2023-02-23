@@ -20,8 +20,6 @@ namespace EladGroup
         public ConnectionInitiator ConnectionInitiator { get; } =
             ConnectionInitiator.Instance;
 
-        public SqlConnection SqlConnection { get; } = null;
-
         private PowerShellExecutor PowerShellExecutor { get; } =
             new PowerShellExecutor();
 
@@ -32,21 +30,18 @@ namespace EladGroup
 
         private Startup()
         {
-            SqlConnection =
-                new SqlConnection(ConnectionInitiator.ConnectionString);
-
             // Open connection at the end of the initialization.
-            OpenConnection();
+            TestConnection();
         }
 
-        private void OpenConnection()
+        private void TestConnection()
         {
             try
             {
                 Console.WriteLine("Opening Connection ...");
 
-                // Open connection.
-                SqlConnection.Open();
+                // Create a connection, and open it.
+                new SqlConnection(ConnectionInitiator.ConnectionString).Open();
 
                 Console.WriteLine("Connection successful!");
             }
