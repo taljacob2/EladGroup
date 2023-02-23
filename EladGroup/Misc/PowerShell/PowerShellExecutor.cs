@@ -1,4 +1,8 @@
-﻿namespace EladGroup.Misc.PowerShell
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace EladGroup.Misc.PowerShell
 {
     
     /// <summary>
