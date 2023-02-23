@@ -39,7 +39,8 @@ namespace EladGroup.Logics
         {
             List<City> returnValue = new List<City>();
 
-            using (SqlConnection sqlConnection = Startup.SqlConnection)
+            using (SqlConnection sqlConnection =
+                new SqlConnection(Startup.ConnectionInitiator.ConnectionString))
             {
                 SqlCommand cmd =
                     new SqlCommand("SELECT * FROM City", sqlConnection);
