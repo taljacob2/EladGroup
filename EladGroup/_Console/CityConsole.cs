@@ -8,6 +8,11 @@ namespace EladGroup._Console
     {
         private CityLogic CityLogic { get; } = new CityLogic();
 
+        public void Insert()
+        {
+            // TODO: need to implement.
+        }
+
         public void Get()
         {
             CityLogic.Get().ForEach(city =>

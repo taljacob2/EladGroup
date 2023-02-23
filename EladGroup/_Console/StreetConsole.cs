@@ -8,6 +8,11 @@ namespace EladGroup._Console
     {
         private StreetLogic StreetLogic { get; } = new StreetLogic();
 
+        public void Insert()
+        {
+            // TODO: need to implement.
+        }
+        
         public void Get()
         {
             StreetLogic.Get().ForEach(street =>
