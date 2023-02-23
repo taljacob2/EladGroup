@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EladGroup.Models;
 
 namespace EladGroup.Logics
 {
@@ -35,6 +36,11 @@ namespace EladGroup.Logics
             {
                 Console.WriteLine(e);
             }
+        }
+
+        public List<Street> Get()
+        {
+            throw new NotImplementedException();
         }
     }
 }
