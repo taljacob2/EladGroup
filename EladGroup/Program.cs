@@ -17,11 +17,12 @@ namespace EladGroup
             CityConsole cityConsole = new CityConsole();
             StreetConsole streetConsole = new StreetConsole();
             
-            // cityLogic.Insert("Ramat Gan", 5);
+            CityLogic cityLogic = new CityLogic();
+            cityLogic.Insert("Haifa", 7);
             // streetLogic.Insert("Ben Gurion", 3, 5);
 
-            // cityConsole.Get();
-            streetConsole.Get();
+            cityConsole.Get();
+            // streetConsole.Get();
         }
     }
 }

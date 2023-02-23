@@ -22,13 +22,16 @@ namespace EladGroup.Logics
             string query = stringBuilder.ToString();
             try
             {
-                using (SqlCommand cmd =
-                    new SqlCommand(query,
-                        new SqlConnection(Startup.ConnectionInitiator
-                            .ConnectionString)))
+                using (SqlConnection sqlConnection =
+                    new SqlConnection(Startup.ConnectionInitiator
+                        .ConnectionString))
                 {
-                    cmd.ExecuteNonQuery(); // Execute the query.
-                    // Console.WriteLine("Query Executed.");
+                    using (SqlCommand cmd = new SqlCommand(query, sqlConnection))
+                    {
+                        sqlConnection.Open();
+                        cmd.ExecuteNonQuery(); // Execute the query.
+                        // Console.WriteLine("Query Executed.");
+                    }
                 }
             }
             catch (Exception e)
