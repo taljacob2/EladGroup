@@ -19,7 +19,7 @@ namespace EladGroup
             // cityLogic.Insert("Ramat Gan", 5);
             // streetLogic.Insert("Ben Gurion", 3, 5);
 
-            cityLogic.Get();
+            cityLogic.Get().ForEach(city => Console.WriteLine(city.ToString()));
         }
     }
 }
