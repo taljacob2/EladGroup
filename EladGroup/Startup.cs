@@ -14,11 +14,29 @@ namespace EladGroup
         public ConnectionInitiator ConnectionInitiator { get; } =
             ConnectionInitiator.Instance;
 
-        private SqlConnection SqlConnection { get; } = new SqlConnection(
-            @"data source=DESKTOP-JJHPQ0B\SQLEXPRESS;initial catalog=EladGroup;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        private SqlConnection SqlConnection { get; } = null;
 
         private PowerShellExecutor PowerShellExecutor { get; } =
             new PowerShellExecutor();
+
+        public Startup()
+        {
+            // Initialize `SqlConnection`.
+            string wholeConnectionString =
+                ConnectionInitiator.Instance.GetConnectionStringByName
+                    ("EladGroupEntities");
+
+            string dataSourceConnectionString = wholeConnectionString.Substring
+            (wholeConnectionString.IndexOf("data source",
+                StringComparison.Ordinal));
+
+            // Remote the quote mark after the string.
+            dataSourceConnectionString =
+                dataSourceConnectionString.Remove(
+                    dataSourceConnectionString.Length - 1);
+
+            SqlConnection = new SqlConnection(dataSourceConnectionString);
+        }
 
         public void OpenConnection()
         {
