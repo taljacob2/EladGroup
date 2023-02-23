@@ -17,8 +17,9 @@ namespace EladGroup
             StreetLogic streetLogic = new StreetLogic();
             
             // cityLogic.Insert("Ramat Gan", 5);
-            streetLogic.Insert("Ben Gurion", 3, 5);
-            
+            // streetLogic.Insert("Ben Gurion", 3, 5);
+
+            cityLogic.Get();
         }
     }
 }

@@ -37,19 +37,44 @@ namespace EladGroup.Logics
 
         public List<City> Get()
         {
-            using (SqlConnection conn = new SqlConnection(connString))
+            List<City> returnValue = new List<City>();
+
+            using (SqlConnection sqlConnection = Startup.SqlConnection)
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM whatever WHERE id = 5", conn);
+                SqlCommand cmd =
+                    new SqlCommand("SELECT * FROM City", sqlConnection);
                 try
                 {
-                    conn.Open();
-                    newID = (int)cmd.ExecuteScalar();
+                    sqlConnection.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            City city = new City();
+
+                            Int32.TryParse(reader["Id"].ToString(), out int id);
+                            city.Id = id;
+
+                            city.Name = reader["Name"].ToString();
+
+                            Int32.TryParse(reader["Priority"].ToString(), out
+                                int priority);
+                            city.Priority = priority;
+
+                            returnValue.Add(city);
+                        }
+
+                        sqlConnection.Close();
+                    }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
+
+            return returnValue;
         }
     }
 }
