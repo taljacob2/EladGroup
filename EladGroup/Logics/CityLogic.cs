@@ -19,11 +19,18 @@ namespace EladGroup.Logics
             stringBuilder.Append($"(N'{name}', {priority})");
 
             string query = stringBuilder.ToString();
-            using (SqlCommand sqlCommand =
-                new SqlCommand(query, Startup.SqlConnection))
+            try
             {
-                sqlCommand.ExecuteNonQuery(); // Execute the query.
-                // Console.WriteLine("Query Executed.");
+                using (SqlCommand sqlCommand =
+                    new SqlCommand(query, Startup.SqlConnection))
+                {
+                    sqlCommand.ExecuteNonQuery(); // Execute the query.
+                    // Console.WriteLine("Query Executed.");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
     }
