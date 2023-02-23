@@ -9,17 +9,29 @@ using EladGroup.Misc._PowerShell;
 
 namespace EladGroup
 {
-    internal class Startup
+    
+    /// <summary>
+    /// Singleton implementation.
+    /// 
+    /// References:
+    /// https://www.c-sharpcorner.com/UploadFile/8911c4/singleton-design-pattern-in-C-Sharp/
+    /// </summary>
+    internal sealed class Startup
     {
         private ConnectionInitiator ConnectionInitiator { get; } =
             ConnectionInitiator.Instance;
 
-        private SqlConnection SqlConnection { get; } = null;
+        public SqlConnection SqlConnection { get; } = null;
 
         private PowerShellExecutor PowerShellExecutor { get; } =
             new PowerShellExecutor();
+        
+        private static readonly Lazy<Startup> Lazy =
+            new Lazy<Startup>(() => new Startup());
 
-        public Startup()
+        public static Startup Instance => Lazy.Value;
+
+        private Startup()
         {
             // Initialize `SqlConnection`.
             string wholeConnectionString =

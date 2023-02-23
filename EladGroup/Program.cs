@@ -9,7 +9,7 @@ namespace EladGroup
         {
             Console.WriteLine("Hello World");
 
-            Startup startup = new Startup();
+            Startup startup = Startup.Instance;
             
             // startup.InitDatabase();
             
