@@ -11,6 +11,8 @@ namespace EladGroup
 
             Startup startup = new Startup();
             
+            // startup.InitDatabase();
+            
             startup.OpenConnection();
         }
     }
