@@ -40,7 +40,49 @@ namespace EladGroup.Logics
 
         public List<Street> Get()
         {
-            throw new NotImplementedException();
+            List<Street> returnValue = new List<Street>();
+
+            using (SqlConnection sqlConnection =
+                new SqlConnection(Startup.ConnectionInitiator.ConnectionString))
+            {
+                SqlCommand cmd =
+                    new SqlCommand("SELECT * FROM Street", sqlConnection);
+                try
+                {
+                    sqlConnection.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Street street = new Street();
+
+                            Int32.TryParse(reader["Id"].ToString(), out int id);
+                            street.Id = id;
+
+                            street.Name = reader["Name"].ToString();
+
+                            Int32.TryParse(reader["Priority"].ToString(), out
+                                int priority);
+                            street.Priority = priority;
+                            
+                            Int32.TryParse(reader["CityId"].ToString(), out
+                                int cityId);
+                            street.CityId = cityId;
+
+                            returnValue.Add(street);
+                        }
+
+                        sqlConnection.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
+
+            return returnValue;
         }
     }
 }

@@ -15,11 +15,13 @@ namespace EladGroup
             // startup.InitDatabase();
             
             CityConsole cityConsole = new CityConsole();
+            StreetConsole streetConsole = new StreetConsole();
             
             // cityLogic.Insert("Ramat Gan", 5);
             // streetLogic.Insert("Ben Gurion", 3, 5);
 
-            cityConsole.Get();
+            // cityConsole.Get();
+            streetConsole.Get();
         }
     }
 }
