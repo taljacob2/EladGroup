@@ -23,7 +23,9 @@ namespace EladGroup.Logics
             try
             {
                 using (SqlCommand cmd =
-                    new SqlCommand(query, Startup.SqlConnection))
+                    new SqlCommand(query,
+                        new SqlConnection(Startup.ConnectionInitiator
+                            .ConnectionString)))
                 {
                     cmd.ExecuteNonQuery(); // Execute the query.
                     // Console.WriteLine("Query Executed.");
@@ -69,9 +71,9 @@ namespace EladGroup.Logics
                         sqlConnection.Close();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(e);
                 }
             }
 

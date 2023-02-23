@@ -23,7 +23,9 @@ namespace EladGroup.Logics
             try
             {
                 using (SqlCommand cmd =
-                    new SqlCommand(query, Startup.SqlConnection))
+                    new SqlCommand(query,
+                        new SqlConnection(Startup.ConnectionInitiator
+                            .ConnectionString)))
                 {
                     cmd.ExecuteNonQuery(); // Execute the query.
                     // Console.WriteLine("Query Executed.");
