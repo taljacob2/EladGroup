@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace EladGroup.Logics
 {
-    internal class SharedLogic<T> where T : class, new()
+    internal abstract class SharedLogic<T> where T : class, new()
     {
         protected Startup Startup { get; } = Startup.Instance;
 
@@ -31,21 +31,7 @@ namespace EladGroup.Logics
             }
         }
 
-        private T FillEntry(SqlDataReader reader)
-        {
-            T t = new T();
-
-            Int32.TryParse(reader["Id"].ToString(), out int id);
-            t.Id = id;
-
-            t.Name = reader["Name"].ToString();
-
-            Int32.TryParse(reader["Priority"].ToString(), out
-                int priority);
-            city.Priority = priority;
-
-            return t;
-        }
+        protected abstract T FillEntry(SqlDataReader reader);
 
         protected List<T> RunListQuery(string query)
         {
