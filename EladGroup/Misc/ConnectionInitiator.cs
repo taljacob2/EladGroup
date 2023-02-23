@@ -39,7 +39,7 @@ namespace EladGroup.Misc
                 dataSourceConnectionString.Remove(
                     dataSourceConnectionString.Length - 1);
 
-            ConnectionString = wholeConnectionString;
+            ConnectionString = dataSourceConnectionString;
         }
 
         public void GetConnectionStrings()
