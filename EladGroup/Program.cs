@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EladGroup.Misc;
+using System;
 
 namespace EladGroup
 {
@@ -7,6 +8,8 @@ namespace EladGroup
         private static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
+
+            new Startup().ConnectionInitiator.GetConnectionStrings();
         }
     }
 }
