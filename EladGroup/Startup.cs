@@ -11,7 +11,7 @@ namespace EladGroup
 {
     internal class Startup
     {
-        public ConnectionInitiator ConnectionInitiator { get; } =
+        private ConnectionInitiator ConnectionInitiator { get; } =
             ConnectionInitiator.Instance;
 
         private SqlConnection SqlConnection { get; } = null;
