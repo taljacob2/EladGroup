@@ -8,10 +8,8 @@ using EladGroup.Models;
 
 namespace EladGroup.Logics
 {
-    internal class StreetLogic
+    internal class StreetLogic : SharedLogic<Street>
     {
-        private Startup Startup { get; } = Startup.Instance;
-
         public void Insert(string name, int priority, int cityId)
         {
             // Create a new SQL query using StringBuilder
@@ -19,26 +17,9 @@ namespace EladGroup.Logics
             stringBuilder.Append(
                 "INSERT INTO Street (Name, Priority, CityId) VALUES ");
             stringBuilder.Append($"(N'{name}', {priority}, {cityId})");
-            
+
             string query = stringBuilder.ToString();
-            try
-            {
-                using (SqlConnection sqlConnection =
-                    new SqlConnection(Startup.ConnectionInitiator
-                        .ConnectionString))
-                {
-                    using (SqlCommand cmd = new SqlCommand(query, sqlConnection))
-                    {
-                        sqlConnection.Open();
-                        cmd.ExecuteNonQuery(); // Execute the query.
-                        // Console.WriteLine("Query Executed.");
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            RunVoidQuery(query);
         }
 
         public List<Street> Get()
@@ -68,7 +49,7 @@ namespace EladGroup.Logics
                             Int32.TryParse(reader["Priority"].ToString(), out
                                 int priority);
                             street.Priority = priority;
-                            
+
                             Int32.TryParse(reader["CityId"].ToString(), out
                                 int cityId);
                             street.CityId = cityId;

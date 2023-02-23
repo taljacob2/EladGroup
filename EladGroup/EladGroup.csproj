@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logics\SharedLogic.cs" />
     <Compile Include="Misc\ObjectExtensions.cs" />
     <Compile Include="Misc\StringIndentation.cs" />
     <Compile Include="_Console\CityConsole.cs" />

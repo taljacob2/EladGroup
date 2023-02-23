@@ -13,5 +13,11 @@ namespace EladGroup._Console
             CityLogic.Get().ForEach(city =>
                 Console.WriteLine(city.ToStringExtension()));
         }
+        
+        public void GetOrderByPriority()
+        {
+            CityLogic.Get().ForEach(city =>
+                Console.WriteLine(city.ToStringExtension()));
+        }
     }
 }

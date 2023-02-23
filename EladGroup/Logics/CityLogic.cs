@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace EladGroup.Logics
 {
-    internal class CityLogic
+    internal class CityLogic : SharedLogic<City>
     {
-        private Startup Startup { get; } = Startup.Instance;
-
         public void Insert(string name, int priority)
         {
             // Create a new SQL query using StringBuilder
@@ -20,27 +18,53 @@ namespace EladGroup.Logics
             stringBuilder.Append($"(N'{name}', {priority})");
 
             string query = stringBuilder.ToString();
-            try
-            {
-                using (SqlConnection sqlConnection =
-                    new SqlConnection(Startup.ConnectionInitiator
-                        .ConnectionString))
-                {
-                    using (SqlCommand cmd = new SqlCommand(query, sqlConnection))
-                    {
-                        sqlConnection.Open();
-                        cmd.ExecuteNonQuery(); // Execute the query.
-                        // Console.WriteLine("Query Executed.");
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            RunVoidQuery(query);
         }
 
         public List<City> Get()
+        {
+            List<City> returnValue = new List<City>();
+
+            using (SqlConnection sqlConnection =
+                new SqlConnection(Startup.ConnectionInitiator.ConnectionString))
+            {
+                SqlCommand cmd =
+                    new SqlCommand("SELECT * FROM City", sqlConnection);
+                try
+                {
+                    sqlConnection.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            City city = new City();
+
+                            Int32.TryParse(reader["Id"].ToString(), out int id);
+                            city.Id = id;
+
+                            city.Name = reader["Name"].ToString();
+
+                            Int32.TryParse(reader["Priority"].ToString(), out
+                                int priority);
+                            city.Priority = priority;
+
+                            returnValue.Add(city);
+                        }
+
+                        sqlConnection.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
+
+            return returnValue;
+        }
+        
+        public List<City> GetOrderByPriority()
         {
             List<City> returnValue = new List<City>();
 
