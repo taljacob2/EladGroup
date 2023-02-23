@@ -1,5 +1,6 @@
 ﻿using System;
 using EladGroup.Logics;
+using EladGroup.Misc;
 
 namespace EladGroup._Console
 {
@@ -9,7 +10,7 @@ namespace EladGroup._Console
 
         public void Get()
         {
-            CityLogic.Get().ForEach(city => Console.WriteLine(city.ToString()));
+            CityLogic.Get().ForEach(city => Console.WriteLine(city.ToStringExtension()));
         }
     }
 }

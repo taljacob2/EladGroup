@@ -1,5 +1,6 @@
 ﻿using System;
 using EladGroup.Logics;
+using EladGroup.Misc;
 
 namespace EladGroup._Console
 {
@@ -10,7 +11,7 @@ namespace EladGroup._Console
         public void Get()
         {
             StreetLogic.Get()
-                .ForEach(street => Console.WriteLine(street.ToString()));
+                .ForEach(street => Console.WriteLine(street.ToStringExtension()));
         }
     }
 }
