@@ -16,7 +16,8 @@ namespace EladGroup.Logics
                     new SqlConnection(Startup.ConnectionInitiator
                         .ConnectionString))
                 {
-                    using (SqlCommand cmd = new SqlCommand(query, sqlConnection))
+                    using (SqlCommand cmd = new SqlCommand(query, sqlConnection)
+                    )
                     {
                         sqlConnection.Open();
                         cmd.ExecuteNonQuery(); // Execute the query.
@@ -45,7 +46,7 @@ namespace EladGroup.Logics
 
             return t;
         }
-        
+
         protected List<T> RunListQuery(string query)
         {
             List<T> returnValue = new List<T>();
@@ -53,8 +54,7 @@ namespace EladGroup.Logics
             using (SqlConnection sqlConnection =
                 new SqlConnection(Startup.ConnectionInitiator.ConnectionString))
             {
-                SqlCommand cmd =
-                    new SqlCommand(query, sqlConnection);
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 try
                 {
                     sqlConnection.Open();
