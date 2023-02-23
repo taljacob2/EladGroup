@@ -23,7 +23,7 @@ namespace EladGroup
         {
             // Initialize `SqlConnection`.
             string wholeConnectionString =
-                ConnectionInitiator.Instance.GetConnectionStringByName
+                ConnectionInitiator.GetConnectionStringByName
                     ("EladGroupEntities");
 
             string dataSourceConnectionString = wholeConnectionString.Substring
