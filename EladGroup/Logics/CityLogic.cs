@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EladGroup.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -32,6 +33,11 @@ namespace EladGroup.Logics
             {
                 Console.WriteLine(e);
             }
+        }
+
+        public List<City> Get()
+        {
+            return null;
         }
     }
 }
