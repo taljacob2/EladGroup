@@ -10,9 +10,8 @@ namespace EladGroup
             Console.WriteLine("Hello World");
 
             Startup startup = new Startup();
-            Console.WriteLine(
-                startup.ConnectionInitiator.GetConnectionStringByName(
-                    "EladGroupEntities"));
+            
+            startup.OpenConnection();
         }
     }
 }
