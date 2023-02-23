@@ -28,7 +28,7 @@ namespace EladGroup.Logics
 
         public List<City> GetOrderByPriority()
         {
-            return RunListQuery("SELECT * FROM City");
+            return RunListQuery("SELECT * FROM City ORDER BY Priority");
         }
 
         protected override City FillEntry(SqlDataReader reader)

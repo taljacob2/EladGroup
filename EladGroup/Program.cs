@@ -21,7 +21,7 @@ namespace EladGroup
             // cityLogic.Insert("Eilat", 1);
             // streetLogic.Insert("Ben Gurion", 3, 5);
 
-            cityConsole.Get();
+            cityConsole.GetOrderByPriority();
             // streetConsole.Get();
         }
     }
