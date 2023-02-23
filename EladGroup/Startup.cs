@@ -9,7 +9,6 @@ using EladGroup.Misc._PowerShell;
 
 namespace EladGroup
 {
-    
     /// <summary>
     /// Singleton implementation.
     /// 
@@ -25,7 +24,7 @@ namespace EladGroup
 
         private PowerShellExecutor PowerShellExecutor { get; } =
             new PowerShellExecutor();
-        
+
         private static readonly Lazy<Startup> Lazy =
             new Lazy<Startup>(() => new Startup());
 
@@ -48,9 +47,12 @@ namespace EladGroup
                     dataSourceConnectionString.Length - 1);
 
             SqlConnection = new SqlConnection(dataSourceConnectionString);
+
+            // Open connection at the end of the initialization.
+            OpenConnection();
         }
 
-        public void OpenConnection()
+        private void OpenConnection()
         {
             try
             {

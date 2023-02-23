@@ -72,8 +72,6 @@
   <ItemGroup>
     <Content Include="InitDatabase.ps1" />
     <Content Include="Sql\Init\CreateDatabase.sql" />
-    <Content Include="Sql\Init\CreateTableCity.sql" />
-    <Content Include="Sql\Init\CreateTableStreet.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -9,11 +9,9 @@ namespace EladGroup
         {
             Console.WriteLine("Hello World");
 
-            Startup startup = Startup.Instance;
-            
+            // Startup startup = Startup.Instance;
             // startup.InitDatabase();
-            
-            startup.OpenConnection();
+
         }
     }
 }
