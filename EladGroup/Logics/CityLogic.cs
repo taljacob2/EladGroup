@@ -22,10 +22,10 @@ namespace EladGroup.Logics
             string query = stringBuilder.ToString();
             try
             {
-                using (SqlCommand sqlCommand =
+                using (SqlCommand cmd =
                     new SqlCommand(query, Startup.SqlConnection))
                 {
-                    sqlCommand.ExecuteNonQuery(); // Execute the query.
+                    cmd.ExecuteNonQuery(); // Execute the query.
                     // Console.WriteLine("Query Executed.");
                 }
             }
@@ -37,7 +37,19 @@ namespace EladGroup.Logics
 
         public List<City> Get()
         {
-            return null;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM whatever WHERE id = 5", conn);
+                try
+                {
+                    conn.Open();
+                    newID = (int)cmd.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
     }
 }

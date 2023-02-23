@@ -22,8 +22,24 @@ namespace EladGroup.Misc
 
         public static ConnectionInitiator Instance => Lazy.Value;
 
+        public string ConnectionString { get; } = null;
+
         private ConnectionInitiator()
         {
+            // Initialize `ConnectionString`.
+            string wholeConnectionString =
+                GetConnectionStringByName("EladGroupEntities");
+
+            string dataSourceConnectionString = wholeConnectionString.Substring
+            (wholeConnectionString.IndexOf("data source",
+                StringComparison.Ordinal));
+
+            // Remote the quote mark after the string.
+            dataSourceConnectionString =
+                dataSourceConnectionString.Remove(
+                    dataSourceConnectionString.Length - 1);
+
+            ConnectionString = wholeConnectionString;
         }
 
         public void GetConnectionStrings()

@@ -22,10 +22,10 @@ namespace EladGroup.Logics
             string query = stringBuilder.ToString();
             try
             {
-                using (SqlCommand sqlCommand =
+                using (SqlCommand cmd =
                     new SqlCommand(query, Startup.SqlConnection))
                 {
-                    sqlCommand.ExecuteNonQuery(); // Execute the query.
+                    cmd.ExecuteNonQuery(); // Execute the query.
                     // Console.WriteLine("Query Executed.");
                 }
             }

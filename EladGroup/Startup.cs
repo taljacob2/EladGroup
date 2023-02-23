@@ -32,21 +32,8 @@ namespace EladGroup
 
         private Startup()
         {
-            // Initialize `SqlConnection`.
-            string wholeConnectionString =
-                ConnectionInitiator.GetConnectionStringByName
-                    ("EladGroupEntities");
-
-            string dataSourceConnectionString = wholeConnectionString.Substring
-            (wholeConnectionString.IndexOf("data source",
-                StringComparison.Ordinal));
-
-            // Remote the quote mark after the string.
-            dataSourceConnectionString =
-                dataSourceConnectionString.Remove(
-                    dataSourceConnectionString.Length - 1);
-
-            SqlConnection = new SqlConnection(dataSourceConnectionString);
+            SqlConnection =
+                new SqlConnection(ConnectionInitiator.ConnectionString);
 
             // Open connection at the end of the initialization.
             OpenConnection();
