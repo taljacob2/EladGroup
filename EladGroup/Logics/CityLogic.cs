@@ -11,7 +11,7 @@ namespace EladGroup.Logics
     {
         private Startup Startup { get; } = Startup.Instance;
 
-        public void Insert(string name, string priority)
+        public void Insert(string name, int priority)
         {
             // Create a new SQL Query using StringBuilder
             StringBuilder stringBuilder = new StringBuilder();
