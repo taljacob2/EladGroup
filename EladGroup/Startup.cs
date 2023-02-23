@@ -9,6 +9,7 @@ namespace EladGroup
 {
     internal class Startup
     {
-        public ConnectionInitiator ConnectionInitiator { get; } = ConnectionInitiator.Instance;
+        public ConnectionInitiator ConnectionInitiator { get; } =
+            ConnectionInitiator.Instance;
     }
 }
