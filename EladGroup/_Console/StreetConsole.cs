@@ -46,5 +46,11 @@ namespace EladGroup._Console
             StreetLogic.Get().ForEach(street =>
                 Console.WriteLine(street.ToStringExtension()));
         }
+
+        public void GetOrderByPriority()
+        {
+            StreetLogic.GetOrderByPriority().ForEach(street =>
+                Console.WriteLine(street.ToStringExtension()));
+        }
     }
 }

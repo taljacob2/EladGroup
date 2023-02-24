@@ -43,6 +43,11 @@ namespace EladGroup.Logics
             return RunListQuery("SELECT * FROM Street");
         }
 
+        public List<Street> GetOrderByPriority()
+        {
+            return RunListQuery("SELECT * FROM Street ORDER BY Priority");
+        }
+        
         protected override Street FillEntry(SqlDataReader reader)
         {
             Street street = new Street();
