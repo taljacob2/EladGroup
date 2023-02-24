@@ -13,10 +13,8 @@ namespace EladGroup.Misc.PowerShells
     {
         public void Run(string scriptPath, params string[] args)
         {
-            using (PowerShell PowerShellInst = PowerShell.Create())
+            using (PowerShell ps = PowerShell.Create())
             {
-                PowerShell ps = PowerShell.Create();
-
                 ps.AddScript(File.ReadAllText(scriptPath));
 
                 // Add arguments to the command.
