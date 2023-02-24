@@ -21,6 +21,12 @@ You have 2 options to do so:
   ```
   sqlcmd -?
   ```
+  
+  Head to [`InitDatabase.ps1`](EladGroup/InitDatabase.ps1) and change the line of:
+  ```
+  -S DESKTOP-JJHPQ0B\SQLEXPRESS
+  ```
+  to your connection string.
 
   To initialize the database, on first run of the program, in [`Program.cs`](EladGroup/Program.cs) enable the line:
   
