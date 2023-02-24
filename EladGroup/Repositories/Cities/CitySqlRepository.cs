@@ -32,21 +32,5 @@ INSERT INTO City (Name, Priority) VALUES
         {
             return RunListQuery("SELECT * FROM City ORDER BY Priority");
         }
-
-        // protected override City FillEntry(SqlDataReader reader)
-        // {
-        //     City city = new City();
-        //
-        //     int.TryParse(reader["Id"].ToString(), out int id);
-        //     city.Id = id;
-        //
-        //     city.Name = reader["Name"].ToString();
-        //
-        //     int.TryParse(reader["Priority"].ToString(), out
-        //         int priority);
-        //     city.Priority = priority;
-        //
-        //     return city;
-        // }
     }
 }
