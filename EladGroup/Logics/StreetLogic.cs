@@ -31,8 +31,6 @@ namespace EladGroup.Logics
                 throw new Exception("`Street.Name`'s length is too long");
             }
 
-            // TODO: Check if `cityId` is an existing cityId.
-
             StreetRepository.Insert(name, priority, cityId);
         }
 

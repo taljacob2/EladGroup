@@ -37,6 +37,8 @@ namespace EladGroup.Consoles
                 throw new Exception("Failed to parse `Street.CityId`");
             }
 
+            // TODO: Check if `cityId` is an existing cityId.
+            
             Console.WriteLine("Inserting to db...");
             StreetLogic.Insert(name, priority, cityId);
         }
