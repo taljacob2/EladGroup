@@ -3,7 +3,7 @@ using EladGroup.Models;
 
 namespace EladGroup.Repositories.Cities
 {
-    internal interface ICityRepository : 
+    internal interface ICityRepository
     {
         void Insert(string name, int priority);
         List<City> Get();

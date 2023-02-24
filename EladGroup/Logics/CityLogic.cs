@@ -10,7 +10,7 @@ using EladGroup.Repositories.Cities;
 
 namespace EladGroup.Logics
 {
-    internal class CityLogic : SharedLogic<City>
+    internal class CityLogic
     {
         private const int CityNameMaxCharCount = 50;
 
@@ -29,39 +29,18 @@ namespace EladGroup.Logics
             {
                 throw new Exception("`City.Name`'s length is too long");
             }
-
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("INSERT INTO City (Name, Priority) VALUES ");
-            stringBuilder.Append($"(N'{name}', {priority})");
-
-            string query = stringBuilder.ToString();
-            RunVoidQuery(query);
+                
+            CitySqlRepository.Insert(name, priority);
         }
 
         public List<City> Get()
         {
-            return RunListQuery("SELECT * FROM City");
+            return CitySqlRepository.Get();
         }
 
         public List<City> GetOrderByPriority()
         {
-            return RunListQuery("SELECT * FROM City ORDER BY Priority");
-        }
-
-        protected override City FillEntry(SqlDataReader reader)
-        {
-            City city = new City();
-
-            Int32.TryParse(reader["Id"].ToString(), out int id);
-            city.Id = id;
-
-            city.Name = reader["Name"].ToString();
-
-            Int32.TryParse(reader["Priority"].ToString(), out
-                int priority);
-            city.Priority = priority;
-
-            return city;
+            return CitySqlRepository.GetOrderByPriority();
         }
     }
 }
