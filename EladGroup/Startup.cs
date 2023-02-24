@@ -47,6 +47,7 @@ namespace EladGroup
         }
 
         /// <summary>
+        ///     Run this to initialize the database on your local machine.
         ///     Make sure you have
         ///     <a
         ///         href="https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-ver15">
@@ -56,8 +57,8 @@ namespace EladGroup
         ///     It may be already installed on your computer.
         ///     You can check this by running:
         ///     <code>
-        /// sqlcmd -?
-        /// </code>
+        ///     sqlcmd -?
+        ///     </code>
         /// </summary>
         public void InitDatabase()
         {

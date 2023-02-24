@@ -1,14 +1,12 @@
-﻿using EladGroup.Misc.PowerShells;
-
-namespace EladGroup
+﻿namespace EladGroup
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
-            Startup.Instance.InitDatabase();
+            // Startup.Instance.InitDatabase();
 
-            // new MainConsole().Run();
+            new MainConsole().Run();
         }
     }
 }
