@@ -163,23 +163,23 @@
                 code.Escape(complex) #>()
     {
 <#
-            foreach (object edmProperty in propertiesWithDefaultValues)
-            {
+    foreach (object edmProperty in propertiesWithDefaultValues)
+    {
 #>
         this.<#=
-                    code.Escape(edmProperty) #> = <#=
-                    typeMapper.CreateLiteral(edmProperty.DefaultValue) #>;
+            code.Escape(edmProperty) #> = <#=
+            typeMapper.CreateLiteral(edmProperty.DefaultValue) #>;
 <#
-            }
+    }
 
-            foreach (object complexProperty in complexProperties)
-            {
+    foreach (object complexProperty in complexProperties)
+    {
 #>
         this.<#=
-                    code.Escape(complexProperty) #> = new <#=
-                    typeMapper.GetTypeName(complexProperty.TypeUsage) #>();
+            code.Escape(complexProperty) #> = new <#=
+            typeMapper.GetTypeName(complexProperty.TypeUsage) #>();
 <#
-            }
+    }
 #>
     }
 
@@ -203,13 +203,13 @@
 #>
 
 <#
-            foreach (object edmProperty in complexProperties)
-            {
+    foreach (object edmProperty in complexProperties)
+    {
 #>
     <#=
-                    codeStringGenerator.Property(edmProperty) #>
+            codeStringGenerator.Property(edmProperty) #>
 <#
-            }
+    }
         }
 #>
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace EladGroup.Misc
+namespace EladGroup.Misc.Extensions
 {
     public static class StringIndentation
     {

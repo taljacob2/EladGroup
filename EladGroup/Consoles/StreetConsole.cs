@@ -1,6 +1,6 @@
 ﻿using System;
 using EladGroup.Logics;
-using EladGroup.Misc;
+using EladGroup.Misc.Extensions;
 using EladGroup.Models;
 
 namespace EladGroup.Consoles

@@ -60,8 +60,8 @@
     <Compile Include="Consoles\CityConsole.cs" />
     <Compile Include="Consoles\StreetConsole.cs" />
     <Compile Include="Misc\Connections\ConnectionInitiator.cs" />
-    <Compile Include="Misc\ObjectExtensions.cs" />
-    <Compile Include="Misc\StringIndentation.cs" />
+    <Compile Include="Misc\Extensions\ObjectExtensions.cs" />
+    <Compile Include="Misc\Extensions\StringIndentation.cs" />
     <Compile Include="Repositories\Cities\CitySqlRepository.cs" />
     <Compile Include="Repositories\Cities\ICityRepository.cs" />
     <Compile Include="Repositories\Shared\SharedSqlRepository.cs" />
