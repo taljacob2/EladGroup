@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
 using EladGroup.Models;
+using EladGroup.Repositories.Streets;
 
 namespace EladGroup.Logics
 {
     internal class StreetLogic
     {
+        private StreetSqlRepository StreetSqlRepository { get; } =
+            new StreetSqlRepository();
+        
         private const int StreetNameMaxCharCount = 50;
 
         /// <summary>
@@ -27,43 +31,17 @@ namespace EladGroup.Logics
 
             // TODO: Check if `cityId` is an existing cityId.
 
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append(
-                "INSERT INTO Street (Name, Priority, CityId) VALUES ");
-            stringBuilder.Append($"(N'{name}', {priority}, {cityId})");
-
-            string query = stringBuilder.ToString();
-            RunVoidQuery(query);
+            StreetSqlRepository.Insert(name, priority, cityId);
         }
 
         public List<Street> Get()
         {
-            return RunListQuery("SELECT * FROM Street");
+            return StreetSqlRepository.Get();
         }
 
         public List<Street> GetOrderByPriority()
         {
-            return RunListQuery("SELECT * FROM Street ORDER BY Priority");
-        }
-
-        protected override Street FillEntry(SqlDataReader reader)
-        {
-            Street street = new Street();
-
-            int.TryParse(reader["Id"].ToString(), out int id);
-            street.Id = id;
-
-            street.Name = reader["Name"].ToString();
-
-            int.TryParse(reader["Priority"].ToString(), out
-                int priority);
-            street.Priority = priority;
-
-            int.TryParse(reader["CityId"].ToString(), out
-                int cityId);
-            street.CityId = cityId;
-
-            return street;
+            return StreetSqlRepository.GetOrderByPriority();
         }
     }
 }

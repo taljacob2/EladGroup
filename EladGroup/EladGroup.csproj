@@ -62,6 +62,8 @@
     <Compile Include="Repositories\Cities\CitySqlRepository.cs" />
     <Compile Include="Repositories\Cities\ICityRepository.cs" />
     <Compile Include="Repositories\SharedSqlRepository.cs" />
+    <Compile Include="Repositories\Streets\IStreetRepository.cs" />
+    <Compile Include="Repositories\Streets\StreetSqlRepository.cs" />
     <Compile Include="_Console\CityConsole.cs" />
     <Compile Include="Logics\CityLogic.cs" />
     <Compile Include="Logics\StreetLogic.cs" />
