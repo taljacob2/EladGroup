@@ -6,7 +6,7 @@ using EladGroup.Models;
 
 namespace EladGroup.Logics
 {
-    internal class StreetLogic : SharedLogic<Street>
+    internal class StreetLogic
     {
         private const int StreetNameMaxCharCount = 50;
 
