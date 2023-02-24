@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace EladGroup.Misc
+namespace EladGroup.Misc.Connections
 {
     /// <summary>
     ///     Prerequisite: Add `System.Configuration` as Reference.

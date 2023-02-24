@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using EladGroup.Misc;
 using EladGroup.Misc._PowerShell;
+using EladGroup.Misc.Connections;
 
 namespace EladGroup
 {

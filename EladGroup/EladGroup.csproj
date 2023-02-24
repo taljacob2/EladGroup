@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Consoles\CityConsole.cs" />
     <Compile Include="Consoles\StreetConsole.cs" />
+    <Compile Include="Misc\Connections\ConnectionInitiator.cs" />
     <Compile Include="Misc\ObjectExtensions.cs" />
     <Compile Include="Misc\StringIndentation.cs" />
     <Compile Include="Repositories\Cities\CitySqlRepository.cs" />
@@ -68,7 +69,6 @@
     <Compile Include="Repositories\Streets\StreetSqlRepository.cs" />
     <Compile Include="Logics\CityLogic.cs" />
     <Compile Include="Logics\StreetLogic.cs" />
-    <Compile Include="Misc\ConnectionInitiator.cs" />
     <Compile Include="Misc\PowerShells\PowerShellExecutor.cs" />
     <Compile Include="Models\City.cs">
       <DependentUpon>Model1.tt</DependentUpon>
