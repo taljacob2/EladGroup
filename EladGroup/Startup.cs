@@ -61,7 +61,7 @@ namespace EladGroup
         /// </summary>
         public void InitDatabase()
         {
-            PowerShellExecutor.Run("InitDatabase.ps1");
+            PowerShellExecutor.Run("..\\..\\InitDatabase.ps1");
         }
     }
 }
