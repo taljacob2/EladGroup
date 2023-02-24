@@ -10,6 +10,8 @@ namespace EladGroup
             Console.WriteLine("Hello World");
 
             // Startup startup = Startup.Instance;
+            
+            // TODO: Check ps1 script path.
             // startup.InitDatabase();
 
             CityConsole cityConsole = new CityConsole();
