@@ -9,7 +9,7 @@ namespace EladGroup.Logics
     {
         private const int CityNameMaxCharCount = 50;
 
-        private CitySqlRepository CitySqlRepository { get; } =
+        private ICityRepository CityRepository { get; } =
             new CitySqlRepository();
 
         /// <summary>
@@ -26,17 +26,17 @@ namespace EladGroup.Logics
                 throw new Exception("`City.Name`'s length is too long");
             }
 
-            CitySqlRepository.Insert(name, priority);
+            CityRepository.Insert(name, priority);
         }
 
         public List<City> Get()
         {
-            return CitySqlRepository.Get();
+            return CityRepository.Get();
         }
 
         public List<City> GetOrderByPriority()
         {
-            return CitySqlRepository.GetOrderByPriority();
+            return CityRepository.GetOrderByPriority();
         }
     }
 }

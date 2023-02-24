@@ -9,7 +9,7 @@ namespace EladGroup.Logics
     {
         private const int StreetNameMaxCharCount = 50;
 
-        private StreetSqlRepository StreetSqlRepository { get; } =
+        private IStreetRepository StreetRepository { get; } =
             new StreetSqlRepository();
 
         /// <summary>
@@ -29,17 +29,17 @@ namespace EladGroup.Logics
 
             // TODO: Check if `cityId` is an existing cityId.
 
-            StreetSqlRepository.Insert(name, priority, cityId);
+            StreetRepository.Insert(name, priority, cityId);
         }
 
         public List<Street> Get()
         {
-            return StreetSqlRepository.Get();
+            return StreetRepository.Get();
         }
 
         public List<Street> GetOrderByPriority()
         {
-            return StreetSqlRepository.GetOrderByPriority();
+            return StreetRepository.GetOrderByPriority();
         }
     }
 }
