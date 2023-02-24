@@ -18,7 +18,11 @@ namespace EladGroup._Console
 
             Console.Write("City.Priority: ");
             input = Console.ReadLine();
-            Int32.TryParse(input, out int priority);
+            if (!Int32.TryParse(input, out int priority))
+            {
+                Console.Error.WriteLine("Failed to parse `City.Priority`");
+                return;
+            }
 
             Console.WriteLine("Inserting to db...");
             CityLogic.Insert(name, priority);
