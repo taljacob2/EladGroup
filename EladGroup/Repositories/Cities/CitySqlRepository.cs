@@ -16,11 +16,10 @@ namespace EladGroup.Repositories.Cities
         /// <param name="priority"></param>
         public void Insert(string name, int priority)
         {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("INSERT INTO City (Name, Priority) VALUES ");
-            stringBuilder.Append($"(N'{name}', {priority})");
-
-            string query = stringBuilder.ToString();
+            string query = $@"
+INSERT INTO City (Name, Priority) VALUES 
+(N'{name}', {priority})
+";
             RunVoidQuery(query);
         }
 
