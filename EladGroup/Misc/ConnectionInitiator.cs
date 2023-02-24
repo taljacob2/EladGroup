@@ -1,28 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Configuration;
 
 namespace EladGroup.Misc
 {
     /// <summary>
-    /// Prerequisite: Add `System.Configuration` as Reference.
-    /// Singleton implementation.
-    /// 
-    /// References:
-    /// https://www.c-sharpcorner.com/UploadFile/8911c4/singleton-design-pattern-in-C-Sharp/
-    /// https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/connection-strings-and-configuration-files
+    ///     Prerequisite: Add `System.Configuration` as Reference.
+    ///     Singleton implementation.
+    ///     References:
+    ///     https://www.c-sharpcorner.com/UploadFile/8911c4/singleton-design-pattern-in-C-Sharp/
+    ///     https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/connection-strings-and-configuration-files
     /// </summary>
     internal sealed class ConnectionInitiator
     {
         private static readonly Lazy<ConnectionInitiator> Lazy =
             new Lazy<ConnectionInitiator>(() => new ConnectionInitiator());
-
-        public static ConnectionInitiator Instance => Lazy.Value;
-
-        public string ConnectionString { get; } = null;
 
         private ConnectionInitiator()
         {
@@ -41,6 +32,10 @@ namespace EladGroup.Misc
 
             ConnectionString = dataSourceConnectionString;
         }
+
+        public static ConnectionInitiator Instance => Lazy.Value;
+
+        public string ConnectionString { get; }
 
         public void GetConnectionStrings()
         {
@@ -64,8 +59,8 @@ namespace EladGroup.Misc
         }
 
         /// <summary>
-        /// Retrieve a connection string by specifying the name.
-        /// Assumes one connection string per name in the config file.
+        ///     Retrieve a connection string by specifying the name.
+        ///     Assumes one connection string per name in the config file.
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>

@@ -1,22 +1,16 @@
-﻿using System.Management.Automation;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Management.Automation;
 
 namespace EladGroup.Misc._PowerShell
 {
-
     /// <summary>
-    /// Prerequisite:
-    /// Add the package: `Microsoft.PowerShell.5.1.ReferenceAssemblies`
+    ///     Prerequisite:
+    ///     Add the package: `Microsoft.PowerShell.5.1.ReferenceAssemblies`
     /// </summary>
     public class PowerShellExecutor
     {
-        public PowerShellExecutor()
-        {
-        }
-
         public void Run(string scriptPath, params string[] args)
         {
             using (PowerShell PowerShellInst = PowerShell.Create())

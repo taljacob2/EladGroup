@@ -8,14 +8,13 @@ namespace EladGroup.Repositories.Cities
 {
     internal class CitySqlRepository : SharedSqlRepository<City>
     {
-
         /// <summary>
-        /// Inserts a new <see cref="City"/> entity to the database.
+        ///     Inserts a new <see cref="City" /> entity to the database.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="priority"></param>
         /// <exception cref="Exception">In case `City.Name`'s length is too long.</exception>
-        /// <see cref="CityNameMaxCharCount"/>
+        /// <see cref="CityNameMaxCharCount" />
         public void Insert(string name, int priority)
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -40,12 +39,12 @@ namespace EladGroup.Repositories.Cities
         {
             City city = new City();
 
-            Int32.TryParse(reader["Id"].ToString(), out int id);
+            int.TryParse(reader["Id"].ToString(), out int id);
             city.Id = id;
 
             city.Name = reader["Name"].ToString();
 
-            Int32.TryParse(reader["Priority"].ToString(), out
+            int.TryParse(reader["Priority"].ToString(), out
                 int priority);
             city.Priority = priority;
 
