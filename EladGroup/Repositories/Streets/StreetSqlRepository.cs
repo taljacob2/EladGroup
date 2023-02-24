@@ -55,24 +55,24 @@ ORDER BY Street.Priority
             throw new NotImplementedException();
         }
 
-        protected override Street FillEntry(SqlDataReader reader)
-        {
-            Street street = new Street();
-
-            int.TryParse(reader["Id"].ToString(), out int id);
-            street.Id = id;
-
-            street.Name = reader["Name"].ToString();
-
-            int.TryParse(reader["Priority"].ToString(), out
-                int priority);
-            street.Priority = priority;
-
-            int.TryParse(reader["CityId"].ToString(), out
-                int cityId);
-            street.CityId = cityId;
-
-            return street;
-        }
+        // protected override Street FillEntry(SqlDataReader reader)
+        // {
+        //     Street street = new Street();
+        //
+        //     int.TryParse(reader["Id"].ToString(), out int id);
+        //     street.Id = id;
+        //
+        //     street.Name = reader["Name"].ToString();
+        //
+        //     int.TryParse(reader["Priority"].ToString(), out
+        //         int priority);
+        //     street.Priority = priority;
+        //
+        //     int.TryParse(reader["CityId"].ToString(), out
+        //         int cityId);
+        //     street.CityId = cityId;
+        //
+        //     return street;
+        // }
     }
 }
