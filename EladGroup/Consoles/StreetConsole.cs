@@ -76,7 +76,7 @@ namespace EladGroup.Consoles
 
             Console.Write("Street.CityId: ");
             int cityId = GetCityIdFromInput();
-            
+
             StreetLogic.Insert(name, priority, cityId);
         }
 

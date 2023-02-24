@@ -29,7 +29,7 @@ namespace EladGroup.Consoles
             {
                 throw new Exception("Failed to parse `City.Priority`");
             }
-            
+
             CityLogic.Insert(name, priority);
         }
 
