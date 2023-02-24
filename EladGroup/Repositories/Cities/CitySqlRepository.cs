@@ -6,8 +6,7 @@ using EladGroup.Repositories.Shared;
 
 namespace EladGroup.Repositories.Cities
 {
-    internal class CitySqlRepository : SharedSqlRepository<City>,
-        ICityRepository
+    internal class CitySqlRepository : SharedSqlRepository, ICityRepository
     {
         /// <summary>
         ///     Inserts a new <see cref="City" /> entity to the database.
@@ -25,12 +24,12 @@ INSERT INTO City (Name, Priority) VALUES
 
         public List<City> Get()
         {
-            return RunListQuery("SELECT * FROM City");
+            return RunListQuery<City>("SELECT * FROM City");
         }
 
         public List<City> GetOrderByPriority()
         {
-            return RunListQuery("SELECT * FROM City ORDER BY Priority");
+            return RunListQuery<City>("SELECT * FROM City ORDER BY Priority");
         }
     }
 }

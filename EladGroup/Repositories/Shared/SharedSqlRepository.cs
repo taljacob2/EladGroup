@@ -7,7 +7,7 @@ using EladGroup.Models;
 
 namespace EladGroup.Repositories.Shared
 {
-    internal abstract class SharedSqlRepository<T> where T : class, new()
+    internal abstract class SharedSqlRepository
     {
         protected Startup Startup { get; } = Startup.Instance;
 
@@ -33,7 +33,8 @@ namespace EladGroup.Repositories.Shared
             }
         }
 
-        protected static T FillEntry(SqlDataReader reader)
+        protected static T FillEntry<T>(SqlDataReader reader)
+            where T : class, new()
         {
             T returnValue = new T();
 
@@ -58,7 +59,7 @@ namespace EladGroup.Repositories.Shared
             return returnValue;
         }
 
-        protected List<T> RunListQuery(string query)
+        protected List<T> RunListQuery<T>(string query) where T : class, new()
         {
             List<T> returnValue = new List<T>();
 
@@ -74,7 +75,7 @@ namespace EladGroup.Repositories.Shared
                     {
                         while (reader.Read())
                         {
-                            returnValue.Add(FillEntry(reader));
+                            returnValue.Add(FillEntry<T>(reader));
                         }
 
                         sqlConnection.Close();

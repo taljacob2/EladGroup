@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using EladGroup.Models;
+using EladGroup.Models.Customs;
+using EladGroup.Models.Customs.Joins;
 using EladGroup.Repositories.Shared;
 
 namespace EladGroup.Repositories.Streets
 {
-    internal class StreetSqlRepository : SharedSqlRepository<Street>,
-        IStreetRepository
+    internal class StreetSqlRepository : SharedSqlRepository, IStreetRepository
 
     {
         /// <summary>
@@ -28,12 +29,13 @@ INSERT INTO Street (Name, Priority, CityId) VALUES
 
         public List<Street> Get()
         {
-            return RunListQuery("SELECT * FROM Street");
+            return RunListQuery<Street>("SELECT * FROM Street");
         }
 
         public List<Street> GetOrderByPriority()
         {
-            return RunListQuery("SELECT * FROM Street ORDER BY Priority");
+            return RunListQuery<Street>(
+                "SELECT * FROM Street ORDER BY Priority");
         }
 
         public List<Street> GetByCityOrderByPriority()
@@ -51,7 +53,10 @@ JOIN City ON Street.CityId = City.Id
 ORDER BY Street.Priority
 ";
 
-            return RunListQuery(query);
+            List<StreetJoinCity> streetJoinCityList =
+                RunListQuery<StreetJoinCity>(query);
+
+            return RunListQuery<Street>(query);
             throw new NotImplementedException();
         }
     }
