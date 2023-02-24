@@ -14,7 +14,8 @@ namespace EladGroup.Logics
     {
         private const int CityNameMaxCharCount = 50;
 
-        private CitySqlRepository CitySqlRepository { get; } = new CitySqlRepository();
+        private CitySqlRepository CitySqlRepository { get; } =
+            new CitySqlRepository();
 
         /// <summary>
         /// Inserts a new <see cref="City"/> entity to the database.
@@ -29,7 +30,7 @@ namespace EladGroup.Logics
             {
                 throw new Exception("`City.Name`'s length is too long");
             }
-                
+
             CitySqlRepository.Insert(name, priority);
         }
 
