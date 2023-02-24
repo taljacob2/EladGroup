@@ -35,6 +35,14 @@ You have 2 options to do so:
 
   In SSMS, import the Sql script of [`CreateDatabase.sql`](EladGroup/Sql/Init/CreateDatabase.sql) to create the database.
 
+## Setup Connection
+
+In [App.config](EladGroup/App.config), modify the line of:
+```
+data source=DESKTOP-JJHPQ0B\SQLEXPRESS;initial catalog=EladGroup;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;
+```
+to your connection string.
+
 ## Documentation
 
 See more docs [here](docs).
