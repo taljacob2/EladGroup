@@ -77,6 +77,8 @@ namespace EladGroup
                 throw new ArgumentOutOfRangeException("option",
                     "`option` is out of range");
             }
+
+            return option;
         }
 
         public void Run()
