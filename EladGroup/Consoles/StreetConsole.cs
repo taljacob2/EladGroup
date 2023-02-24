@@ -95,7 +95,10 @@ namespace EladGroup.Consoles
 
         public void GetByCityOrderByPriority()
         {
-            StreetLogic.GetByCityOrderByPriority().ForEach(street =>
+            Console.Write("Street.CityId: ");
+            int cityId = GetCityIdFromInput();
+            
+            StreetLogic.GetByCityOrderByPriority(cityId).ForEach(street =>
                 Console.WriteLine(street.ToStringExtension()));
         }
     }

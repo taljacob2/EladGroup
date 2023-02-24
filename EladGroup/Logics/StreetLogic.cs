@@ -44,9 +44,9 @@ namespace EladGroup.Logics
             return StreetRepository.GetOrderByPriority();
         }
         
-        public List<Street> GetByCityOrderByPriority()
+        public List<Street> GetByCityOrderByPriority(int cityId)
         {
-            return StreetRepository.GetByCityOrderByPriority();
+            return StreetRepository.GetByCityOrderByPriority(cityId);
         }
     }
 }

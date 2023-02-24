@@ -38,9 +38,9 @@ INSERT INTO Street (Name, Priority, CityId) VALUES
                 "SELECT * FROM Street ORDER BY Priority");
         }
 
-        public List<Street> GetByCityOrderByPriority()
+        public List<Street> GetByCityOrderByPriority(int cityId)
         {
-            string query = @"
+            string query = $@"
 SELECT	
 		Street.Id AS StreetId,
 		Street.Name AS StreetName,
@@ -50,6 +50,7 @@ SELECT
 		City.Priority AS CityPriority
 FROM Street
 JOIN City ON Street.CityId = City.Id
+WHERE Street.CityId = {cityId}
 ORDER BY Street.Priority
 ";
 
