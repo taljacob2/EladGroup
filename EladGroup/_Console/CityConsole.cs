@@ -1,6 +1,7 @@
 ﻿using System;
 using EladGroup.Logics;
 using EladGroup.Misc;
+using EladGroup.Models;
 
 namespace EladGroup._Console
 {
@@ -8,6 +9,12 @@ namespace EladGroup._Console
     {
         private CityLogic CityLogic { get; } = new CityLogic();
 
+        /// <summary>
+        /// Inserts a new <see cref="City"/> entity to the database, by
+        /// receiving inputs from the user via a console interface.
+        /// </summary>
+        /// <exception cref="Exception">In case failed to parse `City.Priority`</exception>
+        /// <exception cref="Exception">In case `City.Name`'s length is too long.</exception>
         public void Insert()
         {
             string input = null;
@@ -20,8 +27,7 @@ namespace EladGroup._Console
             input = Console.ReadLine();
             if (!Int32.TryParse(input, out int priority))
             {
-                Console.Error.WriteLine("Failed to parse `City.Priority`");
-                return;
+                throw new Exception("Failed to parse `City.Priority`");
             }
 
             Console.WriteLine("Inserting to db...");

@@ -10,8 +10,22 @@ namespace EladGroup.Logics
 {
     internal class CityLogic : SharedLogic<City>
     {
+        private const int CityNameMaxCharCount = 50;
+
+        /// <summary>
+        /// Inserts a new <see cref="City"/> entity to the database.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="priority"></param>
+        /// <exception cref="Exception">In case `City.Name`'s length is too long.</exception>
+        /// <see cref="CityNameMaxCharCount"/>
         public void Insert(string name, int priority)
         {
+            if (name.Length > CityNameMaxCharCount)
+            {
+                throw new Exception("`City.Name`'s length is too long");
+            }
+
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("INSERT INTO City (Name, Priority) VALUES ");
             stringBuilder.Append($"(N'{name}', {priority})");
