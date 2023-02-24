@@ -7,10 +7,8 @@ namespace EladGroup
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-
             // Startup startup = Startup.Instance;
-            
+
             // TODO: Check ps1 script path.
             // startup.InitDatabase();
 
@@ -33,7 +31,7 @@ namespace EladGroup
             // {
             //     Console.WriteLine(e);
             // }
-            
+
             new MainConsole().Run();
         }
     }
