@@ -19,6 +19,7 @@ namespace EladGroup.Logics
         /// <param name="priority"></param>
         /// <param name="cityId"></param>
         /// <exception cref="Exception">In case `Street.Name`'s length is too long.</exception>
+        /// <exception cref="Exception">In case `Street.CityId` points to a non-existing `City.Id`.</exception>
         /// <see cref="StreetNameMaxCharCount" />
         public void Insert(string name, int priority, int cityId)
         {
