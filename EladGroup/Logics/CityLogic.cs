@@ -5,12 +5,16 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EladGroup.Repositories;
+using EladGroup.Repositories.Cities;
 
 namespace EladGroup.Logics
 {
     internal class CityLogic : SharedLogic<City>
     {
         private const int CityNameMaxCharCount = 50;
+
+        private CitySqlRepository CitySqlRepository { get; } = new CitySqlRepository();
 
         /// <summary>
         /// Inserts a new <see cref="City"/> entity to the database.
