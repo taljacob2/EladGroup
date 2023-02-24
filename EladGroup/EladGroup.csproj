@@ -57,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consoles\CityConsole.cs" />
+    <Compile Include="Consoles\StreetConsole.cs" />
     <Compile Include="Misc\ObjectExtensions.cs" />
     <Compile Include="Misc\StringIndentation.cs" />
     <Compile Include="Repositories\Cities\CitySqlRepository.cs" />
@@ -64,7 +66,6 @@
     <Compile Include="Repositories\Shared\SharedSqlRepository.cs" />
     <Compile Include="Repositories\Streets\IStreetRepository.cs" />
     <Compile Include="Repositories\Streets\StreetSqlRepository.cs" />
-    <Compile Include="_Console\CityConsole.cs" />
     <Compile Include="Logics\CityLogic.cs" />
     <Compile Include="Logics\StreetLogic.cs" />
     <Compile Include="Misc\ConnectionInitiator.cs" />
@@ -92,7 +93,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="_Console\StreetConsole.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

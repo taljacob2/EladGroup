@@ -3,7 +3,7 @@ using EladGroup.Logics;
 using EladGroup.Misc;
 using EladGroup.Models;
 
-namespace EladGroup._Console
+namespace EladGroup.Consoles
 {
     internal class StreetConsole
     {
