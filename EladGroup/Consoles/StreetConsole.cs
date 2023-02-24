@@ -92,5 +92,11 @@ namespace EladGroup.Consoles
             StreetLogic.GetOrderByPriority().ForEach(street =>
                 Console.WriteLine(street.ToStringExtension()));
         }
+
+        public void GetByCityOrderByPriority()
+        {
+            StreetLogic.GetByCityOrderByPriority().ForEach(street =>
+                Console.WriteLine(street.ToStringExtension()));
+        }
     }
 }

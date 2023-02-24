@@ -52,9 +52,7 @@ namespace EladGroup
                     CityConsole.GetOrderByPriority();
                     break;
                 case 4:
-                    // TODO: implement.
-                    Console.WriteLine(
-                        $"{option}. Get all Street entries of a given City, ordered by priority.");
+                    StreetConsole.GetByCityOrderByPriority();
                     break;
                 case 5:
                     return false;
@@ -97,7 +95,7 @@ namespace EladGroup
                 Run();
                 return;
             }
-            
+
             bool runAgain = false;
             try
             {

@@ -65,6 +65,7 @@ ORDER BY Street.Priority
                 street.Id = streetJoinCity.StreetId;
                 street.Name = streetJoinCity.StreetName;
                 street.Priority = streetJoinCity.StreetPriority;
+                street.CityId = streetJoinCity.CityId;
 
                 returnValue.Add(street);
             });
