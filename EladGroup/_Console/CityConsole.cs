@@ -10,7 +10,18 @@ namespace EladGroup._Console
 
         public void Insert()
         {
-            // TODO: need to implement.
+            string input = null;
+
+            Console.Write("City.Name: ");
+            input = Console.ReadLine();
+            string name = input;
+
+            Console.Write("City.Priority: ");
+            input = Console.ReadLine();
+            Int32.TryParse(input, out int priority);
+
+            Console.WriteLine("Inserting to db...");
+            CityLogic.Insert(name, priority);
         }
 
         public void Get()
@@ -18,7 +29,7 @@ namespace EladGroup._Console
             CityLogic.Get().ForEach(city =>
                 Console.WriteLine(city.ToStringExtension()));
         }
-        
+
         public void GetOrderByPriority()
         {
             CityLogic.GetOrderByPriority().ForEach(city =>

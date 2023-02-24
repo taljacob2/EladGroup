@@ -23,6 +23,8 @@ namespace EladGroup
 
             cityConsole.GetOrderByPriority();
             // streetConsole.Get();
+            
+            // cityConsole.Insert();
         }
     }
 }
