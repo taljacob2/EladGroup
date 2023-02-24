@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using System.Text;
 
 namespace EladGroup.Misc.Extensions
@@ -47,6 +48,17 @@ namespace EladGroup.Misc.Extensions
             stringBuilder.Append("}");
 
             return stringBuilder.ToString();
+        }
+
+        public static void SetProperty(this object obj, PropertyInfo property,
+            object value)
+        {
+            Type type = Nullable.GetUnderlyingType(property.PropertyType) ??
+                        property.PropertyType;
+            object safeValue = (value == null)
+                ? null
+                : Convert.ChangeType(value, type);
+            property.SetValue(obj, safeValue, null);
         }
     }
 }
