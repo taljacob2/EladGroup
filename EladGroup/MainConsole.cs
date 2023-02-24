@@ -97,16 +97,21 @@ namespace EladGroup
                 Run();
                 return;
             }
-
+            
+            bool runAgain = false;
             try
             {
-                while (SwitchMenuRun(option))
-                {
-                }
+                runAgain = SwitchMenuRun(option);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+            }
+
+            if (runAgain)
+            {
+                Console.WriteLine();
+                Run();
             }
         }
     }
