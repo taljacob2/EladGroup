@@ -103,6 +103,7 @@ namespace EladGroup
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                runAgain = true;
             }
 
             if (runAgain)
