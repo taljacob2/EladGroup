@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
-namespace EladGroup.Logics
+namespace EladGroup.Repositories.Shared
 {
-    internal abstract class SharedLogic<T> where T : class, new()
+    internal abstract class SharedSqlRepository<T> where T : class, new()
     {
         protected Startup Startup { get; } = Startup.Instance;
 

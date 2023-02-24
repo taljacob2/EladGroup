@@ -10,8 +10,8 @@ namespace EladGroup._Console
         private CityLogic CityLogic { get; } = new CityLogic();
 
         /// <summary>
-        /// Inserts a new <see cref="City"/> entity to the database, by
-        /// receiving inputs from the user via a console interface.
+        ///     Inserts a new <see cref="City" /> entity to the database, by
+        ///     receiving inputs from the user via a console interface.
         /// </summary>
         /// <exception cref="Exception">In case failed to parse `City.Priority`</exception>
         /// <exception cref="Exception">In case `City.Name`'s length is too long.</exception>
@@ -25,7 +25,7 @@ namespace EladGroup._Console
 
             Console.Write("City.Priority: ");
             input = Console.ReadLine();
-            if (!Int32.TryParse(input, out int priority))
+            if (!int.TryParse(input, out int priority))
             {
                 throw new Exception("Failed to parse `City.Priority`");
             }

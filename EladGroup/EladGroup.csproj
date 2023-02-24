@@ -57,9 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logics\SharedLogic.cs" />
     <Compile Include="Misc\ObjectExtensions.cs" />
     <Compile Include="Misc\StringIndentation.cs" />
+    <Compile Include="Repositories\Cities\CitySqlRepository.cs" />
+    <Compile Include="Repositories\Cities\ICityRepository.cs" />
+    <Compile Include="Repositories\Shared\SharedSqlRepository.cs" />
+    <Compile Include="Repositories\Streets\IStreetRepository.cs" />
+    <Compile Include="Repositories\Streets\StreetSqlRepository.cs" />
     <Compile Include="_Console\CityConsole.cs" />
     <Compile Include="Logics\CityLogic.cs" />
     <Compile Include="Logics\StreetLogic.cs" />

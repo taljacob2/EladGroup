@@ -1,7 +1,5 @@
-﻿using EladGroup.Misc;
-using System;
+﻿using System;
 using EladGroup._Console;
-using EladGroup.Logics;
 
 namespace EladGroup
 {
@@ -13,10 +11,10 @@ namespace EladGroup
 
             // Startup startup = Startup.Instance;
             // startup.InitDatabase();
-            
+
             CityConsole cityConsole = new CityConsole();
             StreetConsole streetConsole = new StreetConsole();
-            
+
             // CityLogic cityLogic = new CityLogic();
             // cityLogic.Insert("Eilat", 1);
             // streetLogic.Insert("Ben Gurion", 3, 5);
