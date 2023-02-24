@@ -57,7 +57,6 @@ namespace EladGroup
                         $"{option}. Get all Street entries of a given City, ordered by priority.");
                     break;
                 case 5:
-                    Console.WriteLine($"{option}. Exit program.");
                     return false;
             }
 
