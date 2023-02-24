@@ -1,8 +1,4 @@
-﻿
-
----
-
-# Create A Database And Scaffold With [Entity Framework 6](https://learn.microsoft.com/en-us/ef/ef6/get-started?source=recommendations)
+﻿# Create A Database And Scaffold With [Entity Framework 6](https://learn.microsoft.com/en-us/ef/ef6/get-started?source=recommendations)
 
 > ### Guides
 > 
