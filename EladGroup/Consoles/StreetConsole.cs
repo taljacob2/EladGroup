@@ -21,7 +21,7 @@ namespace EladGroup.Consoles
         /// <exception cref="ArgumentOutOfRangeException">
         ///     In case `Street.CityId` is out of range
         /// </exception>
-        private int GetCityId()
+        private int GetCityIdFromInput()
         {
             Console.WriteLine();
             Console.WriteLine(
@@ -58,7 +58,7 @@ namespace EladGroup.Consoles
         /// <exception cref="ArgumentOutOfRangeException">
         ///     In case `Street.CityId` is out of range
         /// </exception>
-        /// <see cref="GetCityId"/>
+        /// <see cref="GetCityIdFromInput"/>
         public void Insert()
         {
             string input = null;
@@ -75,7 +75,7 @@ namespace EladGroup.Consoles
             }
 
             Console.Write("Street.CityId: ");
-            int cityId = GetCityId();
+            int cityId = GetCityIdFromInput();
 
             Console.WriteLine("Inserting to db...");
             StreetLogic.Insert(name, priority, cityId);
