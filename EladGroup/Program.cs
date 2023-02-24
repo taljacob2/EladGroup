@@ -26,7 +26,8 @@ namespace EladGroup
 
             try
             {
-                cityConsole.Insert();
+                // cityConsole.Insert();
+                streetConsole.Insert();
             }
             catch (Exception e)
             {
