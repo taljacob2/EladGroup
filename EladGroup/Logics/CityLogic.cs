@@ -26,6 +26,7 @@ namespace EladGroup.Logics
                 throw new Exception("`City.Name`'s length is too long");
             }
 
+            Console.WriteLine("Inserting to db...");
             CityRepository.Insert(name, priority);
         }
 

@@ -31,6 +31,7 @@ namespace EladGroup.Logics
                 throw new Exception("`Street.Name`'s length is too long");
             }
 
+            Console.WriteLine("Inserting to db...");
             StreetRepository.Insert(name, priority, cityId);
         }
 
