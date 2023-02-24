@@ -56,8 +56,20 @@ ORDER BY Street.Priority
             List<StreetJoinCity> streetJoinCityList =
                 RunListQuery<StreetJoinCity>(query);
 
-            return RunListQuery<Street>(query);
-            throw new NotImplementedException();
+            List<Street> returnValue = new List<Street>();
+
+            streetJoinCityList.ForEach(streetJoinCity =>
+            {
+                Street street = new Street();
+
+                street.Id = streetJoinCity.StreetId;
+                street.Name = streetJoinCity.StreetName;
+                street.Priority = streetJoinCity.StreetPriority;
+
+                returnValue.Add(street);
+            });
+
+            return returnValue;
         }
     }
 }
