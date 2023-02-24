@@ -23,6 +23,7 @@ namespace EladGroup.Consoles
         /// </exception>
         private int GetCityId()
         {
+            Console.WriteLine();
             Console.WriteLine(
                 "---------------- Pick a `City.Id` from the following options: ----------------");
 
