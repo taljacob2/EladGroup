@@ -7,10 +7,10 @@ namespace EladGroup.Logics
 {
     internal class CityLogic
     {
-        private const int CityNameMaxCharCount = 50;
-
         private CitySqlRepository CitySqlRepository { get; } =
             new CitySqlRepository();
+
+        private const int CityNameMaxCharCount = 50;
 
         /// <summary>
         ///     Inserts a new <see cref="City" /> entity to the database.
