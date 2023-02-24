@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Text;
 using EladGroup.Models;
 using EladGroup.Repositories.Shared;
 

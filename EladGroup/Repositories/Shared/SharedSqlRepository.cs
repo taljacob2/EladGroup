@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Reflection;
 using EladGroup.Misc.Extensions;
-using EladGroup.Models;
 
 namespace EladGroup.Repositories.Shared
 {

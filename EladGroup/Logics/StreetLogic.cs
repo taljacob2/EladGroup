@@ -43,7 +43,7 @@ namespace EladGroup.Logics
         {
             return StreetRepository.GetOrderByPriority();
         }
-        
+
         public List<Street> GetByCityOrderByPriority(int cityId)
         {
             return StreetRepository.GetByCityOrderByPriority(cityId);

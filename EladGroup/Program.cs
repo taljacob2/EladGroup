@@ -1,5 +1,4 @@
-﻿using System;
-using EladGroup.Consoles;
+﻿using EladGroup.Consoles;
 
 namespace EladGroup
 {

@@ -58,7 +58,7 @@ namespace EladGroup.Consoles
         /// <exception cref="ArgumentOutOfRangeException">
         ///     In case `Street.CityId` is out of range
         /// </exception>
-        /// <see cref="GetCityIdFromInput"/>
+        /// <see cref="GetCityIdFromInput" />
         public void Insert()
         {
             string input = null;
@@ -97,7 +97,7 @@ namespace EladGroup.Consoles
         {
             Console.Write("Street.CityId: ");
             int cityId = GetCityIdFromInput();
-            
+
             StreetLogic.GetByCityOrderByPriority(cityId).ForEach(street =>
                 Console.WriteLine(street.ToStringExtension()));
         }

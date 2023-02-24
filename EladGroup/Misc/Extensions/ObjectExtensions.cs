@@ -55,7 +55,7 @@ namespace EladGroup.Misc.Extensions
         {
             Type type = Nullable.GetUnderlyingType(property.PropertyType) ??
                         property.PropertyType;
-            object safeValue = (value == null)
+            object safeValue = value == null
                 ? null
                 : Convert.ChangeType(value, type);
             property.SetValue(obj, safeValue, null);
