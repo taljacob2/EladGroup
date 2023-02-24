@@ -24,15 +24,17 @@ namespace EladGroup
             // cityConsole.GetOrderByPriority();
             // streetConsole.Get();
 
-            try
-            {
-                // cityConsole.Insert();
-                streetConsole.Insert();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            // try
+            // {
+            //     // cityConsole.Insert();
+            //     streetConsole.Insert();
+            // }
+            // catch (Exception e)
+            // {
+            //     Console.WriteLine(e);
+            // }
+            
+            new MainConsole().Run();
         }
     }
 }

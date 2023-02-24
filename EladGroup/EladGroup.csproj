@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Consoles\CityConsole.cs" />
     <Compile Include="Consoles\StreetConsole.cs" />
+    <Compile Include="MainConsole.cs" />
     <Compile Include="Misc\Connections\ConnectionInitiator.cs" />
     <Compile Include="Misc\Extensions\ObjectExtensions.cs" />
     <Compile Include="Misc\Extensions\StringIndentation.cs" />
