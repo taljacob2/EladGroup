@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Management.Automation;
 
-namespace EladGroup.Misc._PowerShell
+namespace EladGroup.Misc.PowerShells
 {
     /// <summary>
     ///     Prerequisite:
