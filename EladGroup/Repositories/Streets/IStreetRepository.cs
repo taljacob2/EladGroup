@@ -8,5 +8,6 @@ namespace EladGroup.Repositories.Streets
         void Insert(string name, int priority, int cityId);
         List<Street> Get();
         List<Street> GetOrderByPriority();
+        List<Street> GetByCityOrderByPriority();
     }
 }
