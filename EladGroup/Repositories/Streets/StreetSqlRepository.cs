@@ -48,6 +48,7 @@ SELECT
 		City.Priority AS CityPriority
 FROM Street
 JOIN City ON Street.CityId = City.Id
+ORDER BY Street.Priority
 ";
 
             return RunListQuery(query);
