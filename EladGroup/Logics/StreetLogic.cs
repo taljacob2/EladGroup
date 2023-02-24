@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Text;
 using EladGroup.Models;
 using EladGroup.Repositories.Streets;
 
@@ -9,10 +7,10 @@ namespace EladGroup.Logics
 {
     internal class StreetLogic
     {
+        private const int StreetNameMaxCharCount = 50;
+
         private StreetSqlRepository StreetSqlRepository { get; } =
             new StreetSqlRepository();
-        
-        private const int StreetNameMaxCharCount = 50;
 
         /// <summary>
         ///     Inserts a new <see cref="Street" /> entity to the database.

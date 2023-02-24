@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace EladGroup.Repositories
+namespace EladGroup.Repositories.Shared
 {
     internal abstract class SharedSqlRepository<T> where T : class, new()
     {
