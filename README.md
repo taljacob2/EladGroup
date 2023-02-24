@@ -35,7 +35,7 @@ You have 2 options to do so:
   ```  
 
   This will eventually execute the Sql script of [`CreateDatabase.sql`](EladGroup/Sql/Init/CreateDatabase.sql).  
-  Afterwards, disable the line.
+  Afterwards, disable the line of `Startup.Instance.InitDatabase();`.
 
 - **Via Import To SSMS**
 
