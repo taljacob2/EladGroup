@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using EladGroup.Models;
-using EladGroup.Models.Customs.Joins;
 using EladGroup.Repositories.Shared;
 
 namespace EladGroup.Repositories.Streets

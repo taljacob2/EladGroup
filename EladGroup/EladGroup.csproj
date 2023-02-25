@@ -63,7 +63,6 @@
     <Compile Include="Misc\Connections\ConnectionInitiator.cs" />
     <Compile Include="Misc\Extensions\ObjectExtensions.cs" />
     <Compile Include="Misc\Extensions\StringIndentation.cs" />
-    <Compile Include="Models\Customs\Joins\StreetJoinCity.cs" />
     <Compile Include="Repositories\Cities\CitySqlRepository.cs" />
     <Compile Include="Repositories\Cities\ICityRepository.cs" />
     <Compile Include="Repositories\Shared\SharedSqlRepository.cs" />
