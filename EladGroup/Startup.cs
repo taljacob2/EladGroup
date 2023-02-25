@@ -6,6 +6,7 @@ using EladGroup.Misc.PowerShells;
 namespace EladGroup
 {
     /// <summary>
+    ///     Bundles global settings for the program.
     ///     Singleton implementation.
     ///     References:
     ///     https://www.c-sharpcorner.com/UploadFile/8911c4/singleton-design-pattern-in-C-Sharp/
@@ -15,6 +16,11 @@ namespace EladGroup
         private static readonly Lazy<Startup> Lazy =
             new Lazy<Startup>(() => new Startup());
 
+        /// <summary>
+        /// </summary>
+        /// <exception cref="Exception">
+        ///     In case there a connection to the database could not be established
+        /// </exception>
         private Startup()
         {
             // Open connection at the end of the initialization.
@@ -29,6 +35,12 @@ namespace EladGroup
 
         public static Startup Instance => Lazy.Value;
 
+        /// <summary>
+        ///     Tests a connection to the database.
+        /// </summary>
+        /// <exception cref="Exception">
+        ///     In case there a connection to the database could not be established
+        /// </exception>
         private void TestConnection()
         {
             try
@@ -42,7 +54,7 @@ namespace EladGroup
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: " + e.Message);
+                throw new Exception("Error: " + e.Message);
             }
         }
 
