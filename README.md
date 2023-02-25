@@ -2,8 +2,8 @@
 
 #### Connection Details
 
-|   |   |
-|---|---|
+|Title|Detail|
+|:---|:---|
 |SQL Server version:|MS SQL 2022 Express|
 |SQL Server address:|`EladGroup.mssql.somee.com`|
 |Login name:|`taljacob_SQLLogin_1`|
