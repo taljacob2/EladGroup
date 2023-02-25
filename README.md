@@ -1,6 +1,6 @@
 ﻿# EladGroup
 
-## Setup Connection
+## Setup Connection To The SQLServer
 
 In [App.config](EladGroup/App.config), in the connection string of `EladGroupEntities`, modify the line of:
 ```
