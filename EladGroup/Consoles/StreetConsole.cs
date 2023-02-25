@@ -17,9 +17,9 @@ namespace EladGroup.Consoles
         ///     console interface.
         /// </summary>
         /// <returns></returns>
-        /// <exception cref="Exception">In case failed to parse `Street.CityId`</exception>
+        /// <exception cref="Exception">In case failed to parse `Street.CityId`.</exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     In case `Street.CityId` is out of range
+        ///     In case `Street.CityId` is out of range.
         /// </exception>
         private int GetCityIdFromInput()
         {
@@ -52,11 +52,11 @@ namespace EladGroup.Consoles
         ///     Inserts a new <see cref="Street" /> entity to the database, by
         ///     receiving inputs from the user via a console interface.
         /// </summary>
-        /// <exception cref="Exception">In case failed to parse `Street.Priority`</exception>
+        /// <exception cref="Exception">In case failed to parse `Street.Priority`.</exception>
         /// <exception cref="Exception">In case `Street.Name`'s length is too long.</exception>
-        /// <exception cref="Exception">In case failed to parse `Street.CityId`</exception>
+        /// <exception cref="Exception">In case failed to parse `Street.CityId`.</exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     In case `Street.CityId` is out of range
+        ///     In case `Street.CityId` is out of range.
         /// </exception>
         /// <see cref="GetCityIdFromInput" />
         public void Insert()
@@ -94,9 +94,9 @@ namespace EladGroup.Consoles
 
         /// <summary>
         /// </summary>
-        /// <exception cref="Exception">In case failed to parse `Street.CityId`</exception>
+        /// <exception cref="Exception">In case failed to parse `Street.CityId`.</exception>
         /// <exception cref="ArgumentOutOfRangeException">
-        ///     In case `Street.CityId` is out of range
+        ///     In case `Street.CityId` is out of range.
         /// </exception>
         public void GetByCityOrderByPriority()
         {

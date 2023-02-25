@@ -13,7 +13,7 @@ namespace EladGroup.Consoles
         ///     Inserts a new <see cref="City" /> entity to the database, by
         ///     receiving inputs from the user via a console interface.
         /// </summary>
-        /// <exception cref="Exception">In case failed to parse `City.Priority`</exception>
+        /// <exception cref="Exception">In case failed to parse `City.Priority`.</exception>
         /// <exception cref="Exception">In case `City.Name`'s length is too long.</exception>
         public void Insert()
         {

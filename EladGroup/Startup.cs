@@ -21,7 +21,7 @@ namespace EladGroup
         ///     this class.
         /// </summary>
         /// <exception cref="Exception">
-        ///     In case a connection to the database could not be established.
+        ///     In case a connection to the database could not be established..
         /// </exception>
         private Startup()
         {
@@ -40,7 +40,7 @@ namespace EladGroup
         ///     Tests a connection to the database.
         /// </summary>
         /// <exception cref="Exception">
-        ///     In case a connection to the database could not be established
+        ///     In case a connection to the database could not be established.
         /// </exception>
         private void TestConnection()
         {
