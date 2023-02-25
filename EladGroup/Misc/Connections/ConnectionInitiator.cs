@@ -75,6 +75,10 @@ namespace EladGroup.Misc.Connections
             return returnValue;
         }
 
+        /// <summary>
+        ///     When working on development database (localhost).
+        /// </summary>
+        /// <returns></returns>
         private static string GetEladGroupEntitiesConnectionString()
         {
             // Initialize `ConnectionString`.

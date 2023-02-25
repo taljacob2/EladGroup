@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
 using EladGroup.Misc.Connections;
-using EladGroup.Misc.PowerShells;
 
 namespace EladGroup
 {
@@ -54,25 +53,6 @@ namespace EladGroup
             {
                 throw new Exception("Error: " + e.Message);
             }
-        }
-
-        /// <summary>
-        ///     Run this to initialize the database on your local machine.
-        ///     Make sure you have
-        ///     <a
-        ///         href="https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-ver15">
-        ///         sqlcmd
-        ///     </a>
-        ///     installed, to allow queries to the database through the cli.
-        ///     It may be already installed on your computer.
-        ///     You can check this by running:
-        ///     <code>
-        ///     sqlcmd -?
-        ///     </code>
-        /// </summary>
-        public static void InitDatabase()
-        {
-            PowerShellExecutor.Run("..\\..\\InitDatabase.ps1");
         }
     }
 }
