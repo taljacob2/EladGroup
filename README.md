@@ -1,5 +1,13 @@
 ﻿# EladGroup
 
+## Setup Connection
+
+In [App.config](EladGroup/App.config), in the connection string of `EladGroupEntities`, modify the line of:
+```
+data source=DESKTOP-JJHPQ0B\SQLEXPRESS;initial catalog=EladGroup;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;
+```
+to your connection string.
+
 ## Initialize The Database
 
 > **IMPORTANT:** Before proceeding, head to [`CreateDatabase.sql`](EladGroup/Sql/Init/CreateDatabase.sql)
@@ -40,14 +48,6 @@ You have 2 options to do so:
 - **Via Import To SSMS**
 
   In SSMS, import the Sql script of [`CreateDatabase.sql`](EladGroup/Sql/Init/CreateDatabase.sql) to create the database.
-
-## Setup Connection
-
-In [App.config](EladGroup/App.config), in the connection string of `EladGroupEntities`, modify the line of:
-```
-data source=DESKTOP-JJHPQ0B\SQLEXPRESS;initial catalog=EladGroup;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;
-```
-to your connection string.
 
 ## Documentation
 
