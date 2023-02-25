@@ -17,25 +17,12 @@ namespace EladGroup.Misc.Connections
 
         private ConnectionInitiator()
         {
-            // Initialize `ConnectionString`.
-            string wholeConnectionString =
-                GetConnectionStringByName("EladGroupEntities");
-
-            string dataSourceConnectionString = wholeConnectionString.Substring
-            (wholeConnectionString.IndexOf("data source",
-                StringComparison.Ordinal));
-
-            // Remote the quote mark after the string.
-            dataSourceConnectionString =
-                dataSourceConnectionString.Remove(
-                    dataSourceConnectionString.Length - 1);
-
-            ConnectionString = dataSourceConnectionString;
         }
 
         public static ConnectionInitiator Instance => Lazy.Value;
 
-        public string ConnectionString { get; }
+        public string ConnectionString { get; } =
+            GetConnectionStringByName("Deploy");
 
         public void GetConnectionStrings()
         {
@@ -64,7 +51,7 @@ namespace EladGroup.Misc.Connections
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public string GetConnectionStringByName(string name)
+        public static string GetConnectionStringByName(string name)
         {
             string returnValue = null;
 
@@ -86,6 +73,24 @@ namespace EladGroup.Misc.Connections
             }
 
             return returnValue;
+        }
+
+        private static string GetEladGroupEntitiesConnectionString()
+        {
+            // Initialize `ConnectionString`.
+            string wholeConnectionString =
+                GetConnectionStringByName("EladGroupEntities");
+
+            string dataSourceConnectionString = wholeConnectionString.Substring
+            (wholeConnectionString.IndexOf("data source",
+                StringComparison.Ordinal));
+
+            // Remote the quote mark after the string.
+            dataSourceConnectionString =
+                dataSourceConnectionString.Remove(
+                    dataSourceConnectionString.Length - 1);
+
+            return dataSourceConnectionString;
         }
     }
 }
