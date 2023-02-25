@@ -1,53 +1,14 @@
 ﻿# EladGroup
 
-## Setup Connection To The SQLServer
+#### Connection Details
 
-In [App.config](EladGroup/App.config), in the connection string of `EladGroupEntities`, modify the line of:
-```
-data source=DESKTOP-JJHPQ0B\SQLEXPRESS;initial catalog=EladGroup;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;
-```
-to your connection string.
-
-## Initialize The Database
-
-> **IMPORTANT:** Before proceeding, head to [`CreateDatabase.sql`](EladGroup/Sql/Init/CreateDatabase.sql)
-> and modify the `FILENAME` paths of:
->
-> - `N'I:\Tal\Microsoft SSMS\Installation\MSSQL15.SQLEXPRESS\MSSQL\DATA\EladGroup.mdf'`
-> - `N'I:\Tal\Microsoft SSMS\Installation\MSSQL15.SQLEXPRESS\MSSQL\DATA\EladGroup_log.ldf'`
->
-> to your own paths, where you want to save the database to.
-
-You have 2 options to do so:
-
-- **Via CLI (`sqlcmd`)**
-
-  Make sure you have [sqlcmd](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-ver15) installed, to allow queries to the database through the CLI.
-    
-  It may be already installed on your computer.
-  You can check this by running:
-  ```
-  sqlcmd -?
-  ```
-  
-  Head to [`InitDatabase.ps1`](EladGroup/InitDatabase.ps1) and change the line of:
-  ```
-  -S DESKTOP-JJHPQ0B\SQLEXPRESS
-  ```
-  to your connection string.
-
-  To initialize the database, on first run of the program, in [`Program.cs`](EladGroup/Program.cs) enable the line:
-  
-  ```csharp
-  Startup.Instance.InitDatabase();
-  ```  
-
-  This will eventually execute the Sql script of [`CreateDatabase.sql`](EladGroup/Sql/Init/CreateDatabase.sql).  
-  Afterwards, disable the line of `Startup.Instance.InitDatabase();`.
-
-- **Via Import To SSMS**
-
-  In SSMS, import the Sql script of [`CreateDatabase.sql`](EladGroup/Sql/Init/CreateDatabase.sql) to create the database.
+|   |   |
+|---|---|
+|SQL Server version:|MS SQL 2022 Express|
+|SQL Server address:|`EladGroup.mssql.somee.com`|
+|Login name:|`taljacob_SQLLogin_1`|
+|Login password:|`rc8345n9dx`|
+|Connection string:|`workstation id=EladGroup.mssql.somee.com;packet size=4096;user id=taljacob_SQLLogin_1;pwd=rc8345n9dx;data source=EladGroup.mssql.somee.com;persist security info=False;initial catalog=EladGroup`|
 
 ## Documentation
 

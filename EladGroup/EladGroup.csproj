@@ -70,7 +70,6 @@
     <Compile Include="Repositories\Streets\StreetSqlRepository.cs" />
     <Compile Include="Logics\CityLogic.cs" />
     <Compile Include="Logics\StreetLogic.cs" />
-    <Compile Include="Misc\PowerShells\PowerShellExecutor.cs" />
     <Compile Include="Models\City.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -116,7 +115,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model13.cs</LastGenOutput>
     </Content>
-    <Content Include="Sql\Init\CreateDatabase.sql" />
+    <Content Include="Sql\Init\CreateTables.sql" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
