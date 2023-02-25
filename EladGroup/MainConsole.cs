@@ -89,7 +89,7 @@ namespace EladGroup
             {
                 option = GetOptionFromInput();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Run();
                 return;
