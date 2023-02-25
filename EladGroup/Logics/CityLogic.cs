@@ -39,30 +39,5 @@ namespace EladGroup.Logics
         {
             return CityRepository.GetOrderByPriority();
         }
-
-        public City FindCityWithHighestId(List<City> cityList)
-        {
-            if (cityList == null)
-            {
-                return null;
-            }
-
-            if (cityList.Count == 0)
-            {
-                return null;
-            }
-
-            City returnValue = cityList[0];
-
-            foreach (City city in cityList)
-            {
-                if (city.Id > returnValue.Id)
-                {
-                    returnValue = city;
-                }
-            }
-
-            return returnValue;
-        }
     }
 }
