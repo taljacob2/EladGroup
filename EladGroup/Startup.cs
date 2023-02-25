@@ -6,7 +6,7 @@ using EladGroup.Misc.PowerShells;
 namespace EladGroup
 {
     /// <summary>
-    ///     Bundles global settings for the program.
+    ///     Bundles global startup settings for the program.
     ///     Singleton implementation.
     ///     References:
     ///     https://www.c-sharpcorner.com/UploadFile/8911c4/singleton-design-pattern-in-C-Sharp/
@@ -21,7 +21,7 @@ namespace EladGroup
         ///     this class.
         /// </summary>
         /// <exception cref="Exception">
-        ///     In case a connection to the database could not be established..
+        ///     In case a connection to the database could not be established.
         /// </exception>
         private Startup()
         {
