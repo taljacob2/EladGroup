@@ -38,8 +38,7 @@ namespace EladGroup.Consoles
                 throw new Exception("Failed to parse `Street.CityId`");
             }
 
-            if (cityId > CityLogic.FindCityWithHighestId(cityList).Id ||
-                cityId < 1)
+            if (!CityLogic.Get().Exists(city => city.Id == cityId))
             {
                 throw new ArgumentOutOfRangeException("Street.CityId",
                     "`Street.CityId` is out of range");
