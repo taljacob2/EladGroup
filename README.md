@@ -43,7 +43,7 @@ You have 2 options to do so:
 
 ## Setup Connection
 
-In [App.config](EladGroup/App.config), modify the line of:
+In [App.config](EladGroup/App.config), in the connection string of `EladGroupEntities`, modify the line of:
 ```
 data source=DESKTOP-JJHPQ0B\SQLEXPRESS;initial catalog=EladGroup;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;
 ```
