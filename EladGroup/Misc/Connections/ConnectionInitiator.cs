@@ -22,7 +22,7 @@ namespace EladGroup.Misc.Connections
         public static ConnectionInitiator Instance => Lazy.Value;
 
         public string ConnectionString { get; } =
-            GetConnectionStringByName("Deploy");
+            GetConnectionStringByName("Production");
 
         public void GetConnectionStrings()
         {
