@@ -92,6 +92,12 @@ namespace EladGroup.Consoles
                 Console.WriteLine(street.ToStringExtension()));
         }
 
+        /// <summary>
+        /// </summary>
+        /// <exception cref="Exception">In case failed to parse `Street.CityId`</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     In case `Street.CityId` is out of range
+        /// </exception>
         public void GetByCityOrderByPriority()
         {
             Console.Write("Street.CityId: ");
