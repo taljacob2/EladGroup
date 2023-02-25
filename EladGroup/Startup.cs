@@ -17,13 +17,14 @@ namespace EladGroup
             new Lazy<Startup>(() => new Startup());
 
         /// <summary>
+        ///     Reassures there is a connection to the database, before allowing the use of
+        ///     this class.
         /// </summary>
         /// <exception cref="Exception">
-        ///     In case there a connection to the database could not be established
+        ///     In case a connection to the database could not be established.
         /// </exception>
         private Startup()
         {
-            // Open connection at the end of the initialization.
             TestConnection();
         }
 
@@ -39,7 +40,7 @@ namespace EladGroup
         ///     Tests a connection to the database.
         /// </summary>
         /// <exception cref="Exception">
-        ///     In case there a connection to the database could not be established
+        ///     In case a connection to the database could not be established
         /// </exception>
         private void TestConnection()
         {
