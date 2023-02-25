@@ -4,7 +4,7 @@
     {
         private static void Main(string[] args)
         {
-            Startup.InitDatabase();
+            // Startup.InitDatabase();
 
             new MainConsole().Run();
         }
