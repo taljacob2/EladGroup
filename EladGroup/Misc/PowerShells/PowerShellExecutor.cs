@@ -11,7 +11,7 @@ namespace EladGroup.Misc.PowerShells
     /// </summary>
     public class PowerShellExecutor
     {
-        public void Run(string scriptPath, params string[] args)
+        public static void Run(string scriptPath, params string[] args)
         {
             using (PowerShell ps = PowerShell.Create())
             {

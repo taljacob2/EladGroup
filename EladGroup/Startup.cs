@@ -31,9 +31,6 @@ namespace EladGroup
         public ConnectionInitiator ConnectionInitiator { get; } =
             ConnectionInitiator.Instance;
 
-        private PowerShellExecutor PowerShellExecutor { get; } =
-            new PowerShellExecutor();
-
         public static Startup Instance => Lazy.Value;
 
         /// <summary>
@@ -73,7 +70,7 @@ namespace EladGroup
         ///     sqlcmd -?
         ///     </code>
         /// </summary>
-        public void InitDatabase()
+        public static void InitDatabase()
         {
             PowerShellExecutor.Run("..\\..\\InitDatabase.ps1");
         }
