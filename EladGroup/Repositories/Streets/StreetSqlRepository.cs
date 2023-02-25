@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using EladGroup.Models;
-using EladGroup.Models.Customs.Joins;
 using EladGroup.Repositories.Shared;
 
 namespace EladGroup.Repositories.Streets
@@ -38,37 +37,13 @@ INSERT INTO Street (Name, Priority, CityId) VALUES
         public List<Street> GetByCityOrderByPriority(int cityId)
         {
             string query = $@"
-SELECT	
-		Street.Id AS StreetId,
-		Street.Name AS StreetName,
-		Street.Priority AS StreetPriority,
-		Street.CityId,
-		City.Name AS CityName,
-		City.Priority AS CityPriority
+SELECT *
 FROM Street
-JOIN City ON Street.CityId = City.Id
 WHERE Street.CityId = {cityId}
 ORDER BY Street.Priority
 ";
 
-            List<StreetJoinCity> streetJoinCityList =
-                RunListQuery<StreetJoinCity>(query);
-
-            List<Street> returnValue = new List<Street>();
-
-            streetJoinCityList.ForEach(streetJoinCity =>
-            {
-                Street street = new Street();
-
-                street.Id = streetJoinCity.StreetId;
-                street.Name = streetJoinCity.StreetName;
-                street.Priority = streetJoinCity.StreetPriority;
-                street.CityId = streetJoinCity.CityId;
-
-                returnValue.Add(street);
-            });
-
-            return returnValue;
+            return RunListQuery<Street>(query);;
         }
     }
 }
