@@ -48,6 +48,20 @@ namespace EladGroup.Repositories.Shared
                         out int propertyAsInt);
                     returnValue.SetProperty(property, propertyAsInt);
                 }
+                else if (property.PropertyType == typeof(int?))
+                {
+                    bool parseSuccessStatus =
+                        int.TryParse(reader[property.Name].ToString(),
+                            out int propertyAsInt);
+                    if (parseSuccessStatus)
+                    {
+                        returnValue.SetProperty(property, propertyAsInt);
+                    }
+                    else
+                    {
+                        returnValue.SetProperty(property, null);
+                    }
+                }
                 else if (property.PropertyType == typeof(string))
                 {
                     returnValue.SetProperty(property,
